@@ -5,7 +5,7 @@
 
 ## Scala Brief Intro
 
-https://www.coursera.org/learn/progfun1/supplement/ebKWU/scala-tutorial
+* https://www.coursera.org/learn/progfun1/supplement/ebKWU/scala-tutorial
 
 ## Scala Cheat Sheet
 
