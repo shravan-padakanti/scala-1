@@ -18,7 +18,7 @@ A functional language takes functional approach to problem solving i.e. based on
 Functional programming is becoming popular due to:
 * simpler reasoning principles
 * better modularity
-* good for exploiting parallelism for multicore and cloud computing. Watch https://www.youtube.com/watch?v=3jg1AheF4n0 for information on this my Martin Odersky.
+* good for **exploiting parallelism** for multicore and cloud computing. Watch https://www.youtube.com/watch?v=3jg1AheF4n0 for information on this my Martin Odersky.
 
 ### Logic programming: 
 Any program written in a logic programming language is a set of sentences in logical form, expressing facts and rules about some problem domain. The rules are written in the form of clauses (Eg. Prolog, Datalog).
