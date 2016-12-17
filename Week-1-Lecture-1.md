@@ -26,4 +26,7 @@ Any program written in a logic programming language is a set of sentences in log
 ### Object oriented programming: 
 A OOP language takes an object based approach to problem solving. Objects are first class citizens i.e. whatever you can do with data i.e. declare it anywhere, pass it as parameters, use operators on them, etc, you can do that on Objects and thus use objects to form the program. (Eg. Java)
 
+# Takeaway
+Doing concurrent programming in Java requires writing and managing threads, async blocks, locks and releasing locks, etc. Scala makes this simple by providing parallel collections and lambda expressions.
+> Note: Java8 tries to improve on this problem in Java by introducing lambda expressions.
 
