@@ -1,6 +1,6 @@
 # Programming Paradigms
 
-### Imperative programming 
+* Imperative programming 
 An imperative language uses a sequence of statements to determine how to reach a certain goal. (Eg. Java)
 Eg. 
 ```java
