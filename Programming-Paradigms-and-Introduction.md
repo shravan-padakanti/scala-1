@@ -66,7 +66,21 @@ false || e // is false irrespective of e
 
 Scala allows **Nested Functions** so that the functions that are not supposed to be accessed by the user can be nested inside the ones that are accessible.
 
-A block is defined using curly braces: ` { .... }`. The last element of a block is an expression that defines its value i.e. return expression. Blocks are themselves expressions; a block may appear everywhere an expression can.
+A block is defined using curly braces: ` { .... }`. **The last element of a block is an expression that defines its value** i.e. return expression. The word return is optional. Blocks are themselves expressions; a block may appear everywhere an expression can.
+
+```scala
+// This block is invalid:
+def x = {
+    def y = {
+      5
+    }
+}
+
+// This is valid
+def x = {
+    def y = 5
+}
+```
 
 The definitions inside a block are only visible from inside that block. The definitions inside a block shadow definitions of the same names outside the block.
 
