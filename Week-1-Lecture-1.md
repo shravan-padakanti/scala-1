@@ -59,7 +59,10 @@ square(3) + square(4)
 ```
 This model can be applied to all the expressions as long as there is no _side effect_. Eg. The expression `x++` where variable x returns old value of x and also increment the value of x so that the next use uses the updated value. The model works by using either the **call-by-value** or **call-by-name** evaluation strategy, based on which is fastest. Both strategies yield the same result.
 
-**Call-by-value** functions compute the passed-in expression's value before calling the function, thus the same value is accessed every time. However, **Call-by-name** functions recompute the passed-in expression's value every time it is accessed.
+**Call-by-value** has the advantage that it evaluates every function argument only once. Also it compute the passed-in expression's value before calling the function, thus the same value is accessed every time.
+
+**Call-by-name** has the advantage that a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body. Also it recomputes the passed-in expression's value every time it is accessed.
+
 
 Example:
 ```Scala
@@ -94,33 +97,41 @@ x2=1
 
 ```
 
-More examples
+### More examples CBV vs CBN
+Consider the function:
 ```Scala
 def test(x: Int, y: Int) = x * x
+```
 
-scala> test(2,3) 
+test(2,3) 
+```scala
+2 * 2
+4
 // same no.of steps using CBN or CBV
+```
 
-scala> test(3+4,8) 
-// CBN:
-test(3+4,8)
-(3+4) * (3+4)
-7 * (3+4)
-7 * 7
-49
-// CBV:
-7 * 7
-49
-// Thus CBV is faster
+test(3+4,8) 
+| CBV           | CBN           |
+| ------------- |:-------------:|
+| test(7,8)     | (3+4) * (3+4) |
+| 7 * 7         | (3+4) * (3+4) |
+| 49            | 7 * 7         |
+| **FASTER**    | 49            |
 
 scala > test(7, 2*4)
-// CBN
-7 * 7
-49
-// CBV
-test(7, 8)
-7 * 7
-49
-// Thus CBN is faster
-```
+| CBV           | CBN           |
+| ------------- |:-------------:|
+| test(7,8)     | 7 * 7         |
+| 7 * 7         | 49            |
+| 49            | **FASTER**    |
+
+scala > test(3+4, 2*4)
+test(3+4, 2*4)
+| CBV           | CBN           |
+| ------------- |:-------------:|
+| test(7,8)     | (3+4) * (3+4) |
+| 7 * 7         | 7 * 7         |
+| 49            | 49            |
+** Same **
+
 
