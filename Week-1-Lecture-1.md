@@ -104,11 +104,13 @@ def test(x: Int, y: Int) = x * x
 ```
 
 1) test(2,3) 
-```scala
-2 * 2
-4
-// same no.of steps using CBN or CBV
-```
+
+| CBV           | CBN           |
+|:-------------:|:-------------:|
+| 2 * 2         | 2 * 2         |
+| 4             | 4             |
+| **SAME**      | **SAME**      |
+
 
 2) test(3+4,8) 
 
