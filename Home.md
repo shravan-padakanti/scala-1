@@ -3,6 +3,10 @@
 * https://www.safaribooksonline.com/library/view/programming-scala-2nd/9781491950135
 * https://www.safaribooksonline.com/library/view/programming-in-scala/9780981531687/acknowledgments.html
 
+## Course:
+
+* https://www.coursera.org/learn/progfun1/home/info
+
 ## Scala Brief Intro
 
 * https://www.coursera.org/learn/progfun1/supplement/ebKWU/scala-tutorial
