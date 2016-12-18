@@ -62,3 +62,36 @@ def sumInts(a: Int, b: Int)       = sum(a => a, a, b)
 def sumCubes(a: Int, b: Int)      = sum(a => a * a * a, a, b)
 def sumFactorials(a: Int, b: Int) = sum(a => if (a == 0 || a == 1) 1 else a * fact(a-1), a, b)
 ```
+
+# Currying
+
+In the above representation of the 3 sum functions using Anonymous functions, we see that `a` and `b` still pass around unchanged. This can be resolved by returning a function from the sum function:
+
+```scala
+def sum(f: Int => Int): (Int, Int) => Int = {
+    def sumF(a: Int, b: Int): Int =
+        if (a > b) 0
+        else f(a) + sumF(a + 1, b)
+    sumF
+}
+
+def sumInts(a: Int, b: Int)       = sum(a => a)
+def sumCubes(a: Int, b: Int)      = sum(a => a * a * a)
+def sumFactorials(a: Int, b: Int) = sum(a => if (a == 0 || a == 1) 1 else a * fact(a-1))
+
+// This is called using:
+sumInts(1,5)
+sumCubes(1, 10)
+sumFactorials(10, 20)
+```
+Here to avoid middlemenlike sumInts, sumCubes, etc, we can write:
+```scala
+sum(cubes)(1, 10)
+```
+* `sum(cube)` applies sum to cube and returns the _sum of cubes function_.
+* `sum(cube)` is therefore equivalent to `sumCubes`
+* This function is next applied to the arguments (1, 10).
+The function association applies from left to right:
+```scala
+sum(cube)(1, 10) == (sum (cube)) (1, 10)
+```
