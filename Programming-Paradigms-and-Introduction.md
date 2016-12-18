@@ -76,9 +76,15 @@ def x = {
     }
 }
 
-// This is valid
+// These are valid
 def x = {
     def y = 5
+}
+def x = {
+    def y = {
+      5
+    }
+    y
 }
 ```
 
