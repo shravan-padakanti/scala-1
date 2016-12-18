@@ -271,3 +271,6 @@ gcd(14, 21)
 →→ 4 * (3 * (2 * (1 * 1)))
 →→ 120
 ```
+The Scala compiler will automatically optimize any truly tail-recursive method. If you annotate a method that you believe is tail-recursive with the `@tailrec` annotation, then the compiler will warn you if the method is actually not tail-recursive. This makes the `@tailrec` annotation a good idea, both to ensure that a method is currently optimizable and that it remains optimizable as it is modified.
+
+Note that Scala does not consider a method to be tail-recursive if it can be overridden. Thus the method must either be private, final, on an object (as opposed to a class or trait), or inside another method to be optimized.
