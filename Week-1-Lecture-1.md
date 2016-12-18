@@ -146,6 +146,7 @@ Eg. Consider the function:
 def first(x: Int, y: Int) = x
 ```
 For the call: `first(1, loop)`
+
 | CBV           | CBN           |
 |:-------------:|:-------------:|
 | first(1, loop)| 1             |
