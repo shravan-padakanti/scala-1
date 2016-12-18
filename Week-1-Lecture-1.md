@@ -46,6 +46,7 @@ def square(x: Double) = x * x
 # return type can be specified:
 def square(x: Double): Double = x * x
 ```
+**Note:** Specifying return type for functions is optional, but if the function is recursive then its mandatory.
 Primitive datatypes are same as in Java but capitalized: `Int, Double, Boolean`
 
 ### Substitution Model: 
@@ -210,4 +211,63 @@ val y = square(x) // y is 4 directly and not square(2). Console would directly p
 def loop: Boolean = loop  // a method that does nothing but calls itself recursively
 def x = loop // OK, yields x: Boolean on the console
 val x = loop // Infinite loop as the 
+```
+
+# Blocks and Lexical Scope
+
+Scala allows **Nested Functions** so that the functions that are not supposed to be accessed by the user can be nested inside the ones that are accessible.
+
+A block is defined using curly braces: ` { .... }`. The last element of a block is an expression that defines its value i.e. return expression. Blocks are themselves expressions; a block may appear everywhere an expression can.
+
+The definitions inside a block are only visible from inside that block. The definitions inside a block shadow definitions of the same names outside the block.
+
+```scala
+val x = 0
+def f(y: Int) = y + 1
+val result = {
+  val x = f(3); // f is not shadowed inside the block, x is.
+  x * x
+} + x
+
+// Here result = 16
+```
+
+** Semicolons ** are optional, used to separate multiple expressions written on the same line.
+
+Expressions extending to multiple lines can be written by using curly braces:
+```
+( expression1 
++ expression2 )
+```
+Or, the operator can be written as the end of first line indicating that the operation is not yet finished.
+```
+expression1 + 
+expression2
+```
+
+# Recursion
+
+If a function calls itself as the last action, the functions stack frame can be reused. This is called **Tail recursion**. 
+Eg. `gcd` is tail-recursive whereas `factorial` is not:
+```
+// gcd -> Last step is pure gcd.
+gcd(14, 21)
+→ if (21 == 0) 14 else gcd(21, 14 % 21)
+→ if (false) 14 else gcd(21, 14 % 21)
+→ gcd(21, 14 % 21)
+→ gcd(21, 14)
+→ if (14 == 0) 21 else gcd(14, 21 % 14)
+→→ gcd(14, 7)
+→→ gcd(7, 0)
+→ if (0 == 0) 7 else gcd(0, 7 % 0)
+→ 7
+
+// factorial -> Last step factorial() multiplied by something
+→ if (4 == 0) 1 else 4 * factorial(4 - 1)
+→→ 4 * factorial(3)
+→→ 4 * (3 * factorial(2))
+→→ 4 * (3 * (2 * factorial(1)))
+→→ 4 * (3 * (2 * (1 * factorial(0)))
+→→ 4 * (3 * (2 * (1 * 1)))
+→→ 120
 ```
