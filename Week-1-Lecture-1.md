@@ -94,3 +94,33 @@ x2=1
 
 ```
 
+More examples
+```Scala
+def test(x: Int, y: Int) = x * x
+
+scala> test(2,3) 
+// same no.of steps using CBN or CBV
+
+scala> test(3+4,8) 
+// CBN:
+test(3+4,8)
+(3+4) * (3+4)
+7 * (3+4)
+7 * 7
+49
+// CBV:
+7 * 7
+49
+// Thus CBV is faster
+
+scala > test(7, 2*4)
+// CBN
+7 * 7
+49
+// CBV
+test(7, 8)
+7 * 7
+49
+// Thus CBN is faster
+```
+
