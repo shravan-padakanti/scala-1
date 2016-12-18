@@ -46,4 +46,51 @@ def square(x: Double): Double = x * x
 ```
 Primitive datatypes are same as in Java but capitalized: `Int, Double, Boolean`
 
+### Substitution Model: 
+An expression is evaluated i.e. is reduced to a value using substitution. Evaluation of expression takes place from left to right.
+```Scala
+sumOfSquares(3, 2+2)
+sumOfSquares(3, 4)
+square(3) + square(4)
+3 * 3 + square(4)
+9 + square(4)
+9 + 4 * 4
+25
+```
+This model can be applied to all the expressions as long as there is no _side effect_. Eg. The expression `x++` where variable x returns old value of x and also increment the value of x so that the next use uses the updated value. The model works by using either the **call-by-value** or **call-by-name** evaluation strategy, based on which is fastest. Both strategies yield the same result.
+
+**Call-by-value** functions compute the passed-in expression's value before calling the function, thus the same value is accessed every time. However, **Call-by-name** functions recompute the passed-in expression's value every time it is accessed.
+
+Example:
+```Scala
+
+// Function with a side-effect
+def getx():Int = {
+  println("Hello world")
+  1 // return value
+}
+
+def callByValue(x: Int) = {
+  println("x1=" + x)
+  println("x2=" + x)
+}
+
+def callByName(x: => Int) = {
+  println("x1=" + x)
+  println("x2=" + x)
+}
+
+// Call the above functions and the output
+scala> callByValue(getx())
+Hello world
+x1=1
+x2=1
+
+scala> callByName(getx())
+Hello world
+x1=1
+Hello world
+x2=1
+
+```
 
