@@ -103,7 +103,7 @@ Consider the function:
 def test(x: Int, y: Int) = x * x
 ```
 
-1) test(2,3) 
+1) `test(2,3)`
 
 | CBV           | CBN           |
 |:-------------:|:-------------:|
@@ -112,7 +112,7 @@ def test(x: Int, y: Int) = x * x
 | **SAME**      | **SAME**      |
 
 
-2) test(3+4,8) 
+2) `test(3+4,8)`
 
 | CBV           | CBN           |
 |:-------------:|:-------------:|
@@ -121,7 +121,7 @@ def test(x: Int, y: Int) = x * x
 | 49            | 7 * 7         |
 | **FASTER**    | 49            |
 
-3) test(7, 2*4)
+3) `test(7, 2*4)`
 
 | CBV           | CBN           |
 |:-------------:|:-------------:|
@@ -129,7 +129,7 @@ def test(x: Int, y: Int) = x * x
 | 7 * 7         | 49            |
 | 49            | **FASTER**    |
 
-4) test(3+4, 2*4)
+4) `test(3+4, 2*4)`
 
 | CBV           | CBN           |
 |:-------------:|:-------------:|
