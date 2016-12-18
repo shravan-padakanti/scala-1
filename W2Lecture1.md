@@ -95,3 +95,11 @@ The function association applies from left to right:
 ```scala
 sum(cube)(1, 10) == (sum (cube)) (1, 10)
 ```
+
+# Multiple Paramter Lists:
+The above function can be written as
+```scala
+def sum(f: Int => Int)(a: Int, b: Int): Int =
+    if (a > b) 0 else f(a) + sum(f)(a + 1, b)
+```
+We use this instead of just using the 3 argument for the higher order function as [above]() because then we can call it using `sum(cube)(1,10)`.
