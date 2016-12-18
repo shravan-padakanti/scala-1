@@ -206,4 +206,8 @@ To use **by-value**, we use `val`.
 val x = 2
 val y = square(x) // y is 4 directly and not square(2). Console would directly print y = 4 after this is entered.
 def y = square(x) // y is square(2). Console prints Int after this is entered. print(y) prints 4.
+
+def loop: Boolean = loop  // a method that does nothing but calls itself recursively
+def x = loop // OK, yields x: Boolean on the console
+val x = loop // Infinite loop
 ```
