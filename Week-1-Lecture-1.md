@@ -198,3 +198,12 @@ Sometimes `&&` or `||` do not require the right-hand operand to be evaluated. Th
 true || e  // is true irrespective of e
 false || e // is false irrespective of e
 ```
+
+### Value Definitions
+`def` always uses **by-name**.
+To use **by-value**, we use `val`.
+```scala
+val x = 2
+val y = square(x) // y is 4 directly and not square(2). Console would directly print y = 4 after this is entered.
+def y = square(x) // y is square(2). Console prints Int after this is entered. print(y) prints 4.
+```
