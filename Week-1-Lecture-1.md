@@ -57,9 +57,9 @@ square(3) + square(4)
 9 + 4 * 4
 25
 ```
-This model can be applied to all the expressions as long as there is no _side effect_. Eg. The expression `x++` where variable x returns old value of x and also increment the value of x so that the next use uses the updated value. The model works by using either the **call-by-value** or **call-by-name** evaluation strategy, based on which is fastest. Both strategies yield the same result.
+This model can be applied to all the expressions as long as there is no _side effect_. Eg. The expression `x++` where variable x returns old value of x and also increment the value of x so that the next use uses the updated value. The model works by using either the **call-by-value** or **call-by-name** evaluation strategy, based on which is fastest. Both strategies yield the same result **provided the evaluations terminate**.
 
-**Call-by-value** has the advantage that it evaluates every function argument only once. Also it compute the passed-in expression's value before calling the function, thus the same value is accessed every time.
+**Call-by-value** has the advantage that it evaluates every function argument only once. Also it computes the passed-in expression's value before calling the function, thus the same value is accessed every time.
 
 **Call-by-name** has the advantage that a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body. Also it recomputes the passed-in expression's value every time it is accessed.
 
@@ -138,4 +138,19 @@ def test(x: Int, y: Int) = x * x
 | 49            | 49            |
 | **SAME**      | **SAME**      |
 
+### What if the expression does not terminate?
+If CBV terminates, the CBN terminates as well. Vice versa is not true.
+
+Eg. Consider the function: 
+```scala
+def first(x: Int, y: Int) = x
+```
+For the call: `first(1, loop)`
+| CBV           | CBN           |
+|:-------------:|:-------------:|
+| first(1, loop)| 1             |
+| first(1, loop)| **ENDED**     |
+| first(1, loop)|               |
+| ...           |               |
+| **Inf. Loop**      |               |
 
