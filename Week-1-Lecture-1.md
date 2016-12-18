@@ -1,5 +1,3 @@
-[TOC]
-
 # Programming Paradigms
 
 ### Imperative programming
@@ -33,6 +31,8 @@ Doing concurrent programming in Java requires writing and managing threads, asyn
 > Note: Java8 tries to improve on this problem in Java by introducing lambda expressions.
 
 # Elements of Programming in Scala
+
+> `b + 1` is and expression, while `a = b + 1`; is a statement. A statement forms a complete unit of execution.
 
 Functional programming is like a calculator. An interactive shell lets one write expressions and responds with their value (REPL: Read-Eval-Print-Loop).
 
@@ -186,4 +186,15 @@ def constOne(x: Int, y:=> Int) = x
 | **ENDED**     | ...  |
 |               | **Inf. loop**  |
 
-# Conditionals Expressions
+# Conditional Expressions
+
+### if - else
+It looks like if - else for Java but is used for expressions and not statements.
+```scala
+def abs(x: Int) = if (x >= 0) x else -x
+```
+Sometimes `&&` or `||` do not require the right-hand operand to be evaluated. This is called as **short-circuit evaluation**
+```scala
+true || e  // is true irrespective of e
+false || e // is false irrespective of e
+```
