@@ -103,14 +103,14 @@ Consider the function:
 def test(x: Int, y: Int) = x * x
 ```
 
-test(2,3) 
+1) test(2,3) 
 ```scala
 2 * 2
 4
 // same no.of steps using CBN or CBV
 ```
 
-test(3+4,8) 
+2) test(3+4,8) 
 
 | CBV           | CBN           |
 | ------------- | ------------- |
@@ -119,19 +119,21 @@ test(3+4,8)
 | 49            | 7 * 7         |
 | **FASTER**    | 49            |
 
-scala > test(7, 2*4)
+3) test(7, 2*4)
+
 | CBV           | CBN           |
 | ------------- | ------------- |
 | test(7,8)     | 7 * 7         |
 | 7 * 7         | 49            |
 | 49            | **FASTER**    |
 
-scala > test(3+4, 2*4)
+4) test(3+4, 2*4)
+
 | CBV           | CBN           |
 | ------------- | ------------- |
 | test(7,8)     | (3+4) * (3+4) |
 | 7 * 7         | 7 * 7         |
 | 49            | 49            |
-** Same **
+|           ** Same **          |
 
 
