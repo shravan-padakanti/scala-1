@@ -1,3 +1,5 @@
+[TOC]
+
 # Programming Paradigms
 
 ### Imperative programming
@@ -184,3 +186,4 @@ def constOne(x: Int, y:=> Int) = x
 | **ENDED**     | ...  |
 |               | **Inf. loop**  |
 
+# Conditionals Expressions
