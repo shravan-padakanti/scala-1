@@ -134,6 +134,6 @@ def test(x: Int, y: Int) = x * x
 | test(7,8)     | (3+4) * (3+4) |
 | 7 * 7         | 7 * 7         |
 | 49            | 49            |
-|           ** Same **          |
+| **SAMEE**     | **SAMEE**     |
 
 
