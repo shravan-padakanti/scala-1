@@ -153,5 +153,34 @@ For the call: `first(1, loop)`
 | first(1, loop)| **ENDED**     |
 | first(1, loop)|               |
 | ...           |               |
-| **Inf. Loop**      |               |
+| **Inf. Loop** |               |
+
+
+Turns out that for practical purposes CBV is more efficient than CBN and hence **Scala uses CBV by default**. But **CBN can be forced** by using `=>`.
+Eg. 
+```scala
+def callByValue(x: Int) = {
+  println("x1=" + x)
+  println("x2=" + x)
+}
+
+def callByName(x: => Int) = {
+  println("x1=" + x)
+  println("x2=" + x)
+}
+```
+
+### Implications:
+
+Eg. Consider the function: 
+```scala
+def constOne(x: Int, y:=> Int) = x
+```
+
+| `constOne(1+2, loop)` | `constOne(loop, 1+2)` |
+|:-------------:|:-------------:|
+| first(3, loop)| first(loop, 1+2)|
+| 1             | first(loop, 1+2)|
+| **ENDED**     | ...  |
+|               | **Inf. loop**  |
 
