@@ -30,3 +30,20 @@ A OOP language takes an object based approach to problem solving. Objects are fi
 Doing concurrent programming in Java requires writing and managing threads, async blocks, locks and releasing locks, etc. Scala makes this simple by providing parallel collections and lambda expressions.
 > Note: Java8 tries to improve on this problem in Java by introducing lambda expressions.
 
+# Elements of Programming in Scala
+
+Functional programming is like a calculator. An interactive shell lets one write expressions and responds with their value (REPL: Read-Eval-Print-Loop).
+
+Scala uses `def` to define variables. The definitions can have parameters:
+```scala
+def example = 2      // evaluated when called
+val example = 2      // evaluated immediately
+lazy val example = 2 // evaluated once when needed
+
+def square(x: Double) = x * x
+# return type can be specified:
+def square(x: Double): Double = x * x
+```
+Primitive datatypes are same as in Java but capitalized: `Int, Double, Boolean`
+
+
