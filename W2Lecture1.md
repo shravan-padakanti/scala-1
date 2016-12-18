@@ -84,8 +84,14 @@ sumInts(1,5)
 sumCubes(1, 10)
 sumFactorials(10, 20)
 ```
-Here to avoid middlemenlike sumInts, sumCubes, etc, we can write:
+
+### Multiple Parameter Lists:
+In the above format, to avoid middlemenlike sumInts, sumCubes, etc, i.e. for ease of calling them, we can write define the function using **multiple parameter lists** to make it more readable:
 ```scala
+def sum(f: Int => Int)(a: Int, b: Int): Int =
+    if (a > b) 0 else f(a) + sum(f)(a + 1, b)
+
+// This can be called using:
 sum(cubes)(1, 10)
 ```
 * `sum(cube)` applies sum to cube and returns the _sum of cubes function_.
@@ -96,10 +102,15 @@ The function association applies from left to right:
 sum(cube)(1, 10) == (sum (cube)) (1, 10)
 ```
 
-# Multiple Paramter Lists:
-The above function can be written as
+In general, a definition of a function with multiple parameter lists
 ```scala
-def sum(f: Int => Int)(a: Int, b: Int): Int =
-    if (a > b) 0 else f(a) + sum(f)(a + 1, b)
+def f(arg1)...(argn) = E
 ```
-We use this instead of just using the 3 argument for the higher order function as [above]() because then we can call it using `sum(cube)(1,10)`.
+where `n > 1`, is equivalent to
+```scala
+def f(arg1)...(argn−1) = {def g(argn) = E; g}
+```
+where g is a fresh identifier. Or for short:
+```
+def f(arg1)...(argsn−1) = (argn => E)
+```
