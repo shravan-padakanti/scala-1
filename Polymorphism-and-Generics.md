@@ -1,4 +1,4 @@
-# Polymorphism
+# Basics
 
 The example of a `cons-list` i.e. an immutable linked list is used to explain Polymorphism. It has 2 building blocks:
 ```
