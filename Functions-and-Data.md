@@ -81,3 +81,24 @@ The difference between `require` and `assert` is the _intent_ of use.
 * require is used to enforce a precondition on the caller of a function
 * assert is used to check the code of a function
 
+# Constructor
+
+Classes are defined with an implicit constructor which is the **primary constructor**. Additional constructors can be defined by using the `this` keyword.
+```scala
+class Foo(x: Int, y: Int) {
+   def numer = x
+   def denom = y
+
+   // additional constructor which uses the primary constructor
+   def this(x: Int) = {
+      this(x, 1)
+   }
+
+   def multiplyBy(that: Foo) {
+       new Foo( numer * that.numer, denom * that.denom )
+   }
+}
+```
+
+
+
