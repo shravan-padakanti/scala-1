@@ -1,5 +1,3 @@
-# Functions and Data
-
 Here we will learn how functions can create and encapsulate data structures.
 
 # Classes
