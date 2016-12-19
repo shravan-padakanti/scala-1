@@ -15,4 +15,4 @@
 **Week 3**
 
 * [Class Hierarchies and Dynamic Binding](https://github.com/rohitvg/scala-principles-1/wiki/Class-Hierarchies-and-Dynamic-Binding)
-* [Organizing Classes](https://github.com/rohitvg/scala-principles-1/wiki/Organizing-Classes)
+* [Organizing Classes and Scala Class Hierarchy](https://github.com/rohitvg/scala-principles-1/wiki/Organizing-Classes-and-Scala-Class-Hierarchy)
