@@ -10,4 +10,4 @@
 * [Higher Order Functions](https://github.com/rohitvg/scala-principles-1/wiki/Higher-Order-Functions)
 * [Classes, Objects and Types](https://github.com/rohitvg/scala-principles-1/wiki/Classes-Objects-and-Types)
 * [Substitution Model (CBV, CBN) with Classes](https://github.com/rohitvg/scala-principles-1/wiki/Substitution-Model-(CBV,-CBN)-with-Classes)
-* [Operators and Precedence](https://github.com/rohitvg/scala-principles-1/wiki/Operators-and-Precedence)
+* [Operators, Precedence and Types](https://github.com/rohitvg/scala-principles-1/wiki/Operators-and-Precedence)
