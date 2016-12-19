@@ -8,3 +8,4 @@
 **Week 2**
 
 * [Higher Order Functions](https://github.com/rohitvg/scala-principles-1/wiki/Higher-Order-Functions)
+* [Functions and Data](https://github.com/rohitvg/scala-principles-1/wiki/Functions-and-Data)
