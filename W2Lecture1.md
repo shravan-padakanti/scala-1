@@ -127,7 +127,7 @@ def sum(f: Int => Int)(a: Int, b: Int): Int = ...
 // Answer:
 // sum is a function which accepts an function which maps from Int to Int i.e (Int => Int) and returns a function which takes in 2 Ints i.e (Int, Int), which in turn returns an Int.
 (Int => Int) => (Int, Int) => Int
-
+```
 ### Another example:
 Write a product function which returns the product of the: integers between the given numbers or some function(integers) between the given numbers. Then write a factorial function using that.
 ```scala
