@@ -16,4 +16,4 @@
 
 * [Class Hierarchies and Dynamic Binding](https://github.com/rohitvg/scala-principles-1/wiki/Class-Hierarchies-and-Dynamic-Binding)
 * [Organizing Classes and Scala Class Hierarchy](https://github.com/rohitvg/scala-principles-1/wiki/Organizing-Classes-and-Scala-Class-Hierarchy)
-* [Polymorphism](https://github.com/rohitvg/scala-principles-1/wiki/Polymorphism)
+* [Polymorphism and Generics](https://github.com/rohitvg/scala-principles-1/wiki/Polymorphism-and-Generics)
