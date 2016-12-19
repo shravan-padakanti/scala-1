@@ -123,4 +123,4 @@ if (true) 1 else false
 - Object
 - Any
 ```
-Both 1 and false have `AnyVal` as the first common baseclass. Hence `AnyVal`.
+Both **1** and **false** have `AnyVal` as the first common baseclass. Hence `AnyVal`.
