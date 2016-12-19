@@ -1,3 +1,5 @@
+# Operators
+
 Consider the class:
 ```scala
 class Rational(x: Int, y: Int) {
@@ -62,4 +64,20 @@ class Rational(x: Int, y: Int) {
 // Then we can use:
 val x = new Rational(1, 2)
 val p = -x // i.e. -1/2
+```
+
+# Precedence
+
+The following table lists the characters in increasing order of priority precedence:
+```
+(all letters)
+|
+^
+&
+< >
+= !
+:
++ -
+* / %
+(all other special characters)
 ```
