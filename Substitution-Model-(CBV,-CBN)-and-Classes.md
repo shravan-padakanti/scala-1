@@ -1,9 +1,14 @@
 We are familiar with the substituion model, and how expressions with simple datatypes are evaluated using CBV/CBV.
 
+Suppose we have a class definition as follows:
+```scala
+class C(x1, ..., xm){ ... def f(y1, ..., yn) = b ... }
+```
+
 **Question**: How is an instantiation of the class `new C(e1, ..., em)` evaluted? <br/>
 **Answer**: The expression arguments `e1, ..., em` are evaluated like the arguments of a normal function. That’s it. The resulting expression, `new C(v1, ..., vm)`, is already a value.
 
-**Question**:  How is an function call on an instantiation evaluated: new C(v1, ..., vm).f(w1, ..., wn) <br/>
+**Question**:  How is an function call on an instantiation evaluated: `new C(v1, ..., vm).f(w1, ..., wn)` <br/>
 **Answer**: The expression `new C(v1, ..., vm).f(w1, ..., wn)` is rewritten to:
 ```
 [w1/y1, ..., wn/yn][v1/x1, ..., vm/xm][new C(v1, ..., vm)/this] b
