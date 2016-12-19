@@ -92,3 +92,8 @@ class Foo {
   def method: T = 42 // A method which returns an Int 42
 }
 ```
+A function can also be used as a type.
+```scala
+// Set is a function which takes in an integer and returns a Boolean
+type Set = Int => Boolean
+```
