@@ -51,7 +51,7 @@ object of type IntSet is required.
 * In Scala, any user-defined class extends another class. If no superclass is given, the standard class Object in the Java package `java.lang` is assumed.
 * The direct or indirect superclasses of a class C are called **base classes** of C. So, the base classes of NonEmpty are IntSet and Object.
 
-> `scala.Any` is the top superclass in the scala higherarch. It has 2 subclasses: `scala.AnyVal`,`scala.AnyRef`. The `scala.AnyVal` is the superclass of all the value types i.e. Int, Boolean, etc. `scala.AnyRef` is the superclass of all the other classes. If Scala is used in the context of a Java runtime environment, then scala.AnyRef corresponds to java.lang.Object.
+> `scala.Any` is the top superclass in the scala higherarch. It has 2 subclasses: `scala.AnyVal`,`scala.AnyRef`. The `scala.AnyVal` is the superclass of all the value types i.e. Int, Boolean, etc. `scala.AnyRef` is the superclass of all the other classes. If Scala is used in the context of a Java runtime environment, then `scala.AnyRef` corresponds to java.lang.Object.
 
 ### Implementation and Overriding
 
