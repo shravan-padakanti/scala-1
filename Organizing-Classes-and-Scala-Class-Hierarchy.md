@@ -72,7 +72,7 @@ class Square extends Shape with Planar with Movable ...
 
 # Scala Class Hierarchy
 
-![Scala Class Hierarchy](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjyvKCQlYHRAhVFyWMKHTYuDxAQjRwIBw&url=http%3A%2F%2Fx-wei.github.io%2Fprogfun1_lec3_data_abstraction.html&bvm=bv.142059868,d.cGc&psig=AFQjCNEJWg9dH4mNlEM4qsGLtvkMWoG_yA&ust=1482268101156155) 
+![Scala Class Hierarchy](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/scala_class_hierararchy.png) 
 
 ### Any
 `scala.Any` is the top superclass in the scala higherarchy. This is the class that defines:
