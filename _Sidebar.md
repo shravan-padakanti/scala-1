@@ -9,4 +9,4 @@
 
 * [Higher Order Functions](https://github.com/rohitvg/scala-principles-1/wiki/Higher-Order-Functions)
 * [Classes and Objects](https://github.com/rohitvg/scala-principles-1/wiki/Classes-and-Objects)
-* [Substitution Model (CBV, CBN) and Classes](https://github.com/rohitvg/scala-principles-1/wiki/Substitution-Model-(CBV,-CBN)-and-Classes)
+* [Substitution Model (CBV, CBN) with Classes](https://github.com/rohitvg/scala-principles-1/wiki/Substitution-Model-(CBV,-CBN)-and-Classes)
