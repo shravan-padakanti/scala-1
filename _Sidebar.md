@@ -14,4 +14,4 @@
 
 **Week 3**
 
-* [Lecture1](https://github.com/rohitvg/scala-principles-1/wiki/W3L1)
+* [Class Hierarchies and Dynamic Binding](https://github.com/rohitvg/scala-principles-1/wiki/Class-Hierarchies-and-Dynamic-Binding)
