@@ -52,7 +52,7 @@ assert   scala.Predef.assert
 
 ### Traits
 
-Traits are similar to abstract classes where they contain unimplemented and implemented methods (concrete method definitons), but cannot have concrete value definitions. They are declare using the `trait` keyword.
+Traits are similar to abstract classes where they contain unimplemented and implemented methods (concrete method definitons). 
 ```scala
 trait Planar {
     def height: Int
@@ -61,9 +61,9 @@ trait Planar {
 }
 ```
 Traits vs Abstract Classes:
-* Classes, objects and traits can inherit from at most one class but many traits. Eg
+* Classes, objects and traits can inherit from at most one class or abstract class but many traits. Eg
 ``` scala
 class Square extends Shape with Planar with Movable ...
 ```
-* Abstract classes can have constructor parameters as well as type parameters. Traits can have only type parameters. 
+* Abstract classes can have constructor value parameters as well as type parameters (i.e. generic type parameters). Traits can have only type parameters. 
 * Abstract classes are fully interoperable with Java. You can call them from Java code without any wrappers. Traits are fully interoperable only if they do not contain any implementation code
