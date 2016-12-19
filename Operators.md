@@ -57,7 +57,7 @@ class Rational(x: Int, y: Int) {
     def numer = x / g
     def denom = y / g
     
-    def unary_-: Rational = new Rational(-numer, denom)
+    def unary_- : Rational = new Rational(-numer, denom)  //note the space between - and :
 }
 // Then we can use:
 val x = new Rational(1, 2)
