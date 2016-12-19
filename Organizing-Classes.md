@@ -74,11 +74,19 @@ class Square extends Shape with Planar with Movable ...
 
 ![Scala Class Hierarchy](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjyvKCQlYHRAhVFyWMKHTYuDxAQjRwIBw&url=http%3A%2F%2Fx-wei.github.io%2Fprogfun1_lec3_data_abstraction.html&bvm=bv.142059868,d.cGc&psig=AFQjCNEJWg9dH4mNlEM4qsGLtvkMWoG_yA&ust=1482268101156155) 
 
-`scala.Any` is the top superclass in the scala higherarchy. This is the class that defines `==`,`!=`,`toString()`,`hashCode()`. It has 2 subclasses: `scala.AnyVal`,`scala.AnyRef`. 
+### Any
+`scala.Any` is the top superclass in the scala higherarchy. This is the class that defines:
+*  `==`
+* `!=`
+* `toString()` 
+* `hashCode()`
+It has 2 subclasses: `scala.AnyVal`,`scala.AnyRef`. 
 
 `scala.AnyVal` is the superclass of all the primitive/value types i.e. Int, Boolean, etc. 
 
 `scala.AnyRef` is the superclass of all the other classes. If Scala is used in the context of a Java runtime environment, then `scala.AnyRef` corresponds to java.lang.Object.
+
+### Nothing and Exception
 
 `Nothing` type is at the bottom of Scala’s type hierarchy. It is a subtype of every other type. There is no value of type Nothing.
 Why is that useful?
@@ -92,4 +100,13 @@ throw Exc
 aborts evaluation by throwing Exception Exc.
 The type of `throw Exc` is `Nothing`.
 
+### Null
 
+Every reference class type also has `null` as a value. The type of null is `Null`.
+
+`Null` is a subtype of every class that inherits from Object; it is **incompatible** with subtypes of AnyVal.
+```scala
+val x = null         // x: Null
+val y: String = null // y: String
+val z: Int = null    // error: type mismatch
+```
