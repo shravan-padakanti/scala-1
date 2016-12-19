@@ -104,4 +104,5 @@ Once this program is compiled, you can start it from the command line with:
 > }
 > '''
 
+Object-oriented languages (including Scala) implement **dynamic method dispatch**. This means that the code invoked by a method call depends on the **runtime type** of the object that contains the method.
 
