@@ -31,11 +31,11 @@ class Rational(x: Int, y: Int) {
         if (this.less(that)) that else this
 }
 ```
-// So the expression:
+So the expression:
 ```
 new Rational(1, 2).less(new Rational(2, 3))
 ```
-// is evaluated as:
+is evaluated as:
 ```
 -----> [1/x, 2/y] [newRational(2, 3)/that] [new Rational(1, 2)/this]
 -----> new Rational(1, 2).numer * new Rational(2, 3).denom < new Rational(2, 3).numer * new Rational(1, 2).denom
