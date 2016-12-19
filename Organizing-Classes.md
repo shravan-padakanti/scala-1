@@ -1,3 +1,5 @@
+# Organizing Classes 
+
 ### Packages
 
 Like Java, classes are organized using **Packages**. To place a class or object inside a package, the `package` clause is placed at the top the source file.
@@ -67,3 +69,27 @@ class Square extends Shape with Planar with Movable ...
 ```
 * Abstract classes can have constructor value parameters as well as type parameters (i.e. generic type parameters). Traits can have only type parameters. 
 * Abstract classes are fully interoperable with Java. You can call them from Java code without any wrappers. Traits are fully interoperable only if they do not contain any implementation code
+
+# Scala Class Hierarchy
+
+![Scala Class Hierarchy](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjyvKCQlYHRAhVFyWMKHTYuDxAQjRwIBw&url=http%3A%2F%2Fx-wei.github.io%2Fprogfun1_lec3_data_abstraction.html&bvm=bv.142059868,d.cGc&psig=AFQjCNEJWg9dH4mNlEM4qsGLtvkMWoG_yA&ust=1482268101156155) 
+
+`scala.Any` is the top superclass in the scala higherarchy. This is the class that defines `==`,`!=`,`toString()`,`hashCode()`. It has 2 subclasses: `scala.AnyVal`,`scala.AnyRef`. 
+
+`scala.AnyVal` is the superclass of all the primitive/value types i.e. Int, Boolean, etc. 
+
+`scala.AnyRef` is the superclass of all the other classes. If Scala is used in the context of a Java runtime environment, then `scala.AnyRef` corresponds to java.lang.Object.
+
+`Nothing` type is at the bottom of Scala’s type hierarchy. It is a subtype of every other type. There is no value of type Nothing.
+Why is that useful?
+* To signal abnormal termination (eg. return Nothing.)
+* As an element type of empty collections.
+
+`Exception` type: Scala exception handling is similar to Java. The expression:
+```scala
+throw Exc
+```
+aborts evaluation by throwing Exception Exc.
+The type of `throw Exc` is `Nothing`.
+
+
