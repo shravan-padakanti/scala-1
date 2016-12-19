@@ -97,8 +97,9 @@ It means "in many forms". In programming it means:
 * A type can have instances of many types
 
 There are 2 typical forms:
-**1. Subtyping:** Instances of subclass can be passed to a base class. Eg. List has 2 subtypes Nil, Cons. Here Cons and Nil can be both used as a List.
-**1. Generics:** Instances of a function or a class are created by Type Parameterization. Eg. We can create a list of Ints, Doubles, Booleans using type-parameters as above.
+
+1. **Subtyping:** Instances of subclass can be passed to a base class. Eg. List has 2 subtypes Nil, Cons. Here Cons and Nil can be both used as a List.
+2. **Generics:** Instances of a function or a class are created by Type Parameterization. Eg. We can create a list of Ints, Doubles, Booleans using type-parameters as above.
 
 
 
