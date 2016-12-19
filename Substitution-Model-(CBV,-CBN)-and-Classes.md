@@ -4,7 +4,8 @@ We are familiar with the substituion model, and how expressions with simple data
 **Answer**: The expression arguments `e1, ..., em` are evaluated like the arguments of a normal function. That’s it. The resulting expression, `new C(v1, ..., vm)`, is already a value.
 
 **Question**:  How is an function call on an instantiation evaluated: new C(v1, ..., vm).f(w1, ..., wn) <br/>
-**Answer**: The expression `new C(v1, ..., vm).f(w1, ..., wn)` is rewritten to:`[w1/y1, ..., wn/yn][v1/x1, ..., vm/xm][new C(v1, ..., vm)/this] b`.
+**Answer**: The expression `new C(v1, ..., vm).f(w1, ..., wn)` is rewritten to:
+```[w1/y1, ..., wn/yn][v1/x1, ..., vm/xm][new C(v1, ..., vm)/this] b```.
 There are three substitutions at work here:
 * the substitution of the formal parameters `y1, ..., yn` of the function f by the arguments `w1, ..., wn`
 * the substitution of the formal parameters `x1, ..., xm` of the class C by the class arguments `v1, ..., vm`
