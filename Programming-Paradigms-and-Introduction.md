@@ -115,12 +115,12 @@ expression2
 ```
 
 # Expressions:
-In Scala, an expression can be:
-* An identifier such as x, isGoodEnough,
-* A literal, like 0, 1.0, ”abc”,
-* A function application, like sqrt(x),
-* An operator application, like -x, y + x,
-* A selection, like math.abs,
-* A conditional expression, like if (x < 0) -x else x,
-* A block, like { val x = math.abs(y) ; x * 2 }
-* An anonymous function, like x => x + 1.
+In Scala, an **expression** can be:
+* An **identifier** such as `x`, `isGoodEnough`
+* A **literal**, like `0`, `1.0`, `"abc"`
+* A **function application**, like `sqrt(x)`
+* An **operator application**, like `-x`, `y + x`
+* A **selection**, like `math.abs`
+* A **conditional expression**, like `if (x < 0) -x else x`
+* A **block**, like `{ val x = math.abs(y) ; x * 2 }`
+* An **anonymous function,** like `x => x + 1`.
