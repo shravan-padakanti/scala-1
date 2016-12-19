@@ -25,5 +25,5 @@ r max s                             r.max(s)
 ```
 
 # 2. Relaxed Identifiers
-Operators hence, can be used as Identifiers which are either **Alphanumeric** (must start with a letter) or **Symbolic**, ( `_` counts as a letter). <br/>
+Operators hence, can be used as Identifiers which are either **Alphanumeric** (must start with a letter) or **Symbolic**, ( an _ counts as a letter). <br/>
 Eg. `x1`, `*`, `+?%&`, `vector_++`, `counter_=`
