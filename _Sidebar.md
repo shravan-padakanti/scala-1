@@ -7,4 +7,4 @@
 
 **Week 2**
 
-* [Lecture 1](https://github.com/rohitvg/scala-principles-1/wiki/W2Lecture1)
+* [Higher Order Functions](https://github.com/rohitvg/scala-principles-1/wiki/Higher-Order-Functions)
