@@ -48,7 +48,7 @@ val y = new Rational(1, 3)
 val p = x + y // instead of x.add(y)
 ```
 
-Note: To define prefix operators like `-x`, we have to define them as `unary_-`.
+Note: To define **prefix operators** like `-x`, we have to define them as `unary_-`.
 Eg. 
 ```scala
 class Rational(x: Int, y: Int) {
