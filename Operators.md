@@ -47,3 +47,19 @@ val x = new Rational(1, 2)
 val y = new Rational(1, 3)
 val p = x + y // instead of x.add(y)
 ```
+
+Note: To define prefix operators like `-x`, we have to define them as `unary_-`.
+Eg. 
+```scala
+class Rational(x: Int, y: Int) {
+    require(y != 0)
+    
+    def numer = x / g
+    def denom = y / g
+    
+    def unary_-: Rational = new Rational(-numer, denom)
+}
+// Then we can use:
+val x = new Rational(1, 2)
+val p = -x // i.e. -1/2
+```
