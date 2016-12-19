@@ -140,3 +140,12 @@ product(x => x * 3)(3, 4)
 
 def factorial(a: Int): Int = product(x => x)(1, a)
 ```
+The product and the sum function can be generalized using another function, lets call it mapReduce as below:
+```scala
+mapReduce(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = {
+    if (a > b) zero // 1 in case of product, 0 in case of sum
+    else combine(f(a), mapReduce(a+1, combine, zero)(a+1, b))
+}
+
+def product(f: Int => Int)(a: Int, b: Int): Int = mapReduce(f, (a, b) => a * b, 1)(a, b)
+```
