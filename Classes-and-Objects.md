@@ -100,5 +100,15 @@ class Foo(x: Int, y: Int) {
 }
 ```
 
+# Types
+We can define a type in Scala using the `type` keyword:
+```scala
+class Foo {
+  type T = Int
+
+  def method: T = 42 // A method which returns an Int 42
+}
+```
+
 
 
