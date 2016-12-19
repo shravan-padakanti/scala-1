@@ -110,7 +110,33 @@ where `n > 1`, is equivalent to
 ```scala
 def f(arg1)...(argn−1) = {def g(argn) = E; g}
 ```
-where g is a fresh identifier. Or for short:
-```
+where g is a fresh identifier. Or for short using anonymous function on rhs:
+```scala
 def f(arg1)...(argsn−1) = (argn => E)
+```
+... repeating n times ...
+```scala
+def f = (args1 ⇒ (args2 ⇒ ...(argsn ⇒ E)...))
+```
+
+Example:
+```scala
+def sum(f: Int => Int)(a: Int, b: Int): Int = ...
+// what is the 'type' of sum?
+
+// Answer:
+// sum is a function which accepts an function which maps from Int to Int i.e (Int => Int) and returns a function which takes in 2 Ints i.e (Int, Int), which in turn returns an Int.
+(Int => Int) => (Int, Int) => Int
+
+### Another example:
+Write a product function which returns the product of the: integers between the given numbers or some function(integers) between the given numbers. Then write a factorial function using that.
+```scala
+def product(f: Int => Int)(a: Int, b: Int): Int = {
+    if (a > b) 1
+    else f(a) * product(f)(a+1, b)
+}
+// call
+product(x => x * 3)(3, 4) 
+
+def factorial(a: Int): Int = product(x => x)(1, a)
 ```
