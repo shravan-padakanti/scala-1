@@ -110,3 +110,17 @@ val x = null         // x: Null
 val y: String = null // y: String
 val z: Int = null    // error: type mismatch
 ```
+
+### Question
+What is the type of:
+```scala
+if (true) 1 else false
+
+// options
+- Int
+- Boolean
+- AnyVal
+- Object
+- Any
+```
+Both 1 and false have `AnyVal` as the first common baseclass. Hence `AnyVal`.
