@@ -1,18 +1,4 @@
 # Class Hierarchies
-> **Static vs Dynamic Binding**
->
-> In the most general terms, static binding means that references are resolved at compile time.
-> ```java
-> Animal a = new Animal();
-> a.Roar(); // The compiler can resolve this method call statically.
-> ```
-> Dynamic binding means that references are resolved at run time.
-> ```java
-> public void MakeSomeNoise(object a) {
->  // Things happen...
->  ((Animal) a).Roar(); // You won't know if this works until runtime!
-> }
-> '''
 
 For class hierarchies we will be taking the example of IntegerSets.
 
@@ -100,3 +86,22 @@ Once this program is compiled, you can start it from the command line with:
 ```
 > scala Hello
 ```
+
+# Dynamic Binding
+
+> **Static vs Dynamic Binding**
+>
+> In the most general terms, static binding means that references are resolved at compile time.
+> ```java
+> Animal a = new Animal();
+> a.Roar(); // The compiler can resolve this method call statically.
+> ```
+> Dynamic binding means that references are resolved at run time.
+> ```java
+> public void MakeSomeNoise(object a) {
+>  // Things happen...
+>  ((Animal) a).Roar(); // You won't know if this works until runtime!
+> }
+> '''
+
+
