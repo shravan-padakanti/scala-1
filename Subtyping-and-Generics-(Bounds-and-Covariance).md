@@ -111,4 +111,12 @@ So if
 type A = IntSet => NonEmpty
 type B = NonEmpty => IntSet
 ```
-According to the Liskov Principle, `A <: B`.
+According to the Liskov Principle, `A <: B` - since B can return an Empty or NonEmpty, but A can return only NonEmpty.
+
+So in general:
+```scala
+// if
+A2 <: A1 and B1 <: B2 
+// then
+A1 => B1 <: A2 => B2
+```
