@@ -22,7 +22,7 @@ There are two important **differences between lists and arrays**.
 * Lists are immutable — the elements of a list cannot be changed.
 * Lists are recursive, while arrays are flat.
 
-## List Constructor
+### List Constructor
 
 All lists are constructed from:
 * the empty list `Nil`, and
@@ -31,8 +31,23 @@ All lists are constructed from:
 `x :: xs` gives a new list with the first element x, followed by the elements of xs.
 For example:
 ```scala
-fruit = ”apples” :: (”oranges” :: (”pears” :: Nil))
-nums = 1 :: (2 :: (3 :: (4 :: Nil)))
-empty = Nil
+val fruit = ”apples” :: (”oranges” :: (”pears” :: Nil))
+val nums  = 1 :: (2 :: (3 :: (4 :: Nil)))
+val empty = Nil
+```
+
+### Right Associativity
+
+Convention: Operators ending in `:` associate to the right, thus `A :: B :: C` is interpreted as `A :: (B :: C).`
+
+So we can thus omit the parentheses in the definition above.
+```scala
+val nums = 1 :: 2 :: 3 :: 4 :: Nil
+```
+Operators ending in `:` are also different in the they are seen as method calls of the right-hand operand. (`::` is analogus to a prepend operation)
+
+So the expression above is equivalent to
+```
+Nil.::(4).::(3).::(2).::(1)
 ```
 
