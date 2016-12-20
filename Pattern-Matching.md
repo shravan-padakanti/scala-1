@@ -47,7 +47,7 @@ def eval(e: Expr): Int = e match {
 }
 
 // So 
-eval(4) // will match case Number
+eval(4)   // will match case Number
 eval(4+3) // will match case Sum
 ```
 
