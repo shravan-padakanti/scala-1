@@ -22,7 +22,7 @@
 
 * [Objects-Everywhere](https://github.com/rohitvg/scala-principles-1/wiki/Objects-Everywhere)
 * [Subtyping and Generics (Bounds and Covariance)](https://github.com/rohitvg/scala-principles-1/wiki/Subtyping-and-Generics-(Bounds-and-Covariance))
+* [Decomposition](https://github.com/rohitvg/scala-principles-1/wiki/Decomposition)
 
 **Week 5**
 
-* [Decomposition](https://github.com/rohitvg/scala-principles-1/wiki/Decomposition)
