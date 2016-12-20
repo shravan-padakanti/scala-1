@@ -113,7 +113,7 @@ type B = NonEmpty => IntSet
 ```
 According to the Liskov Principle, `A <: B` - since B can return an Empty or NonEmpty, but A can return only NonEmpty.
 
-So in general:
+So in general, functions are _contracariant_ in argument types and _covariant_ in return types:
 ```scala
 // if
 A2 <: A1 and B1 <: B2 
