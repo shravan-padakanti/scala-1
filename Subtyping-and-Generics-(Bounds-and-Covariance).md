@@ -120,3 +120,33 @@ A2 <: A1 and B1 <: B2
 // then
 A1 => B1 <: A2 => B2
 ```
+
+### Practical Example:
+
+```scala
+trait List[T] {
+    def isEmpty: Boolean
+    def head: T
+    def tail: List[T]
+}
+
+class Cons[T](val head: T, val tail: List[T]) extends List[T] { 
+    def isEmpty = false
+}
+
+class Nil extends List[String] {
+    def isEmpty: Boolean = true
+    def head: T = throw new NoSuchElementException()
+    def tail: List[T] = throw new NoSuchElementException()
+}
+```
+Can be changed to:
+```scala
+trait List[+T] {
+   ...
+}
+
+class Nil extends List[Nothing] {
+   ...
+}
+
