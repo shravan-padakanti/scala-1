@@ -13,6 +13,7 @@ package idealized.scala
 abstract class Boolean extends AnyVal {
     def ifThenElse[T](t: => T, e: => T): T
 
+    // The false and true here are also from the idealized.scala package
     def && (x: => Boolean): Boolean = ifThenElse(x, false)
     def || (x: => Boolean): Boolean = ifThenElse(true, x)
     def unary_!: Boolean            = ifThenElse(false, true)
