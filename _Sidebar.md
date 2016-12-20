@@ -24,6 +24,7 @@
 * [Subtyping and Generics (Bounds and Covariance)](https://github.com/rohitvg/scala-principles-1/wiki/Subtyping-and-Generics-(Bounds-and-Covariance))
 * [Decomposition](https://github.com/rohitvg/scala-principles-1/wiki/Decomposition)
 * [Pattern Matching](https://github.com/rohitvg/scala-principles-1/wiki/Pattern-Matching)
+* [Lists](https://github.com/rohitvg/scala-principles-1/wiki/Lists)
 
 **Week 5**
 
