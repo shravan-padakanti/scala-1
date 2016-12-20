@@ -1,0 +1,1 @@
+#Nothing type is at the bottom of Scala’s type hierarchy
