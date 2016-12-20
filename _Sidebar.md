@@ -21,3 +21,4 @@
 **Week 4**
 
 * [Objects-Everywhere](https://github.com/rohitvg/scala-principles-1/wiki/Objects-Everywhere)
+* [Subtyping and Generics](https://github.com/rohitvg/scala-principles-1/wiki/Subtyping-and-Generics)
