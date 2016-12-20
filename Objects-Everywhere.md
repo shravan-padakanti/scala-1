@@ -1,10 +1,10 @@
-### Pure Object Orientation
+# Pure Object Orientation
 
 A pure Object Oriented language is one where every value is an Object. Is Scala a pure Object Oriented language?
 
 Conceptually, types such as `Int` or `Boolean` do not receive special treatment in Scala i.e. they are not primitive types and are just like any other Classes defined in package `scala`. For reasons of efficiency, the Scala compiler represents or maps `scala.Int` by 32 bit integers and `scala.Boolean` by Java's primitive Boolean, etc.
 
-### Pure Booleans
+## Primitive Classes as Objects
 
 Scala compiler represents or maps `scala.Boolean` by Java's primitive Boolean, but it can be defined as a Class from the first principles without resorting to primitive Booleans:
 ```scala
@@ -52,4 +52,18 @@ etc
 
 Similarly the `scala.Int` can also be represented using classes.
 
-### Functions as Objects
+## Functions as Objects
+
+Functions _are_ treated as Objects by Scala.
+
+`A => B` is basically an abbreviation for `scala.Function1[A,B]` which is roughly defined as:
+```scala
+trait Function1[A, B] {
+    def apply(x: A): B
+}
+```
+So basically functions are `objects` with a `apply()` method.
+There are traits for Function2, Function3, ... Function22 for more parameters.
+
+### Expansion of Function Values
+
