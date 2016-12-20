@@ -105,3 +105,10 @@ class C[+A]
 class C[-A]
 class C[A]
 ```
+
+So if 
+```scala
+type A = IntSet => NonEmpty
+type B = NonEmpty => IntSet
+```
+According to the Liskov Principle, `A <: B`.
