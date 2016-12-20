@@ -69,5 +69,23 @@ More rules:
 * The same variable name can only appear once in a pattern. So, Sum(x, x) is not a legal pattern.
 * **Names of constants begin with a capital letter**, with the exception of the reserved words null, true, false.
 
+### How are Match Expression Evaluated:
 
+An expression of the form
+```
+e match { case p1 => e1 ... case pn => en }
+```
+matches the value of the selector `e` with the patterns `p1, ..., pn` in the order in which they are written.
+Once the first matching case is found, the whole match expression is rewritten to the right-hand side of where the pattern matches the selector e.
 
+### Pattern Matching and Methods
+
+Of course, it’s also possible to define the evaluation function as a method of the base trait.
+Example
+```
+trait Expr {
+    def eval: Int = this match {
+        case Number(n) => n
+        case Sum(e1, e2) => e1.eval + e2.eval
+    }
+}
