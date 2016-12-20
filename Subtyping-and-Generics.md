@@ -33,11 +33,11 @@ Here, `<: IntSet` is an **upper bound** of the type parameter S: It means that S
 
 ### Upper Bounds
 * `[S <: T]` means: S is a subtype of T, and
-Eg. If T is `IntSet`, then S could be one of NonEmpty or IntSet.
+Eg. If T is `IntSet`, then S could be one of `NonEmpty` or `IntSet`.
 
 ### Lower Bounds
 * `[S >: T]` means: S is a supertype of T, or T is a subtype of S.
-Eg. If T is NonEmpty, then S could be one of NonEmpty, IntSet, AnyRef, or Any.
+Eg. If T is `NonEmpty`, then S could be one of `NonEmpty`, `IntSet`, `AnyRef`, or `Any`.
 
 
 
