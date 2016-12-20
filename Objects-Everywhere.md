@@ -11,8 +11,8 @@ Scala compiler represents or maps `scala.Boolean` by Java's primitive Boolean, b
 package idealized.scala
 
 abstract class Boolean extends AnyVal {
-    // This method will simulate the boolean. Usage:
-    // if (cond) x else y ===== cond.ifThenElse(x,y)
+    // arg t is the expression for the 'if then' part and 
+    // arg e is the expression for the 'else' part.
     // We will define the other operators using this 
     // method.
     def ifThenElse[T](t: => T, e: => T): T
