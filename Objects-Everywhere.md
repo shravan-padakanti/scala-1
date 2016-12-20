@@ -54,6 +54,8 @@ Similarly the `scala.Int` can also be represented using classes.
 
 ## Functions as Objects
 
+>A Scala **method** is a part of a class which has a name, a signature, optionally some annotations, where as a **function** in Scala is a complete object which can be assigned to a variable.
+
 Functions _are_ treated as Objects by Scala.
 
 `A => B` is basically an abbreviation for `scala.Function1[A,B]` which is roughly defined as:
