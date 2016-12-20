@@ -38,7 +38,7 @@ Generally, the notation.
 * `[S >: T]` means: S is a supertype of T, or T is a subtype of S.
 
 ### Lower Bounds
-You can also use a lower bound for a type variable.
+You can also use a lower bound for a type variable.<br/>
 Example: `[S >: T]` introduces a type parameter S that can range only over supertypes of T.
 So if T is NonEmpty, then S could be one of NonEmpty, IntSet, AnyRef, or Any.
 
