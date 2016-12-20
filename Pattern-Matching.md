@@ -82,13 +82,13 @@ Once the first matching case is found, the whole match expression is rewritten t
 
 Of course, it’s also possible to define the evaluation function as a method of the base classes or traits in the hierarchy.
 Example
-```
+```scala
 trait Expr {
     def eval: Int = this match {
         case Number(n) => n
         case Sum(e1, e2) => e1.eval + e2.eval
     }
 }
+```
 
-
-So here the limitations mentioned at the top of the page are resolved.
+**Bottomline**: So here the limitations mentioned at the top of the page are resolved.
