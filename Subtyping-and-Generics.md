@@ -27,9 +27,17 @@ A way to express this is:
 ```scala
 def assertAllPos[S <: IntSet](r: S): S = ...
 ```
+
 Here, `<: IntSet` is an **upper bound** of the type parameter S: It means that S can be instantiated only to types that conform to IntSet. <br/>
+
+### Upper Bounds
 Generally, the notation.
 * S <: T means: S is a subtype of T, and
 * S >: T means: S is a supertype of T, or T is a subtype of S.
+
+### Lower Bounds
+You can also use a lower bound for a type variable.
+Example: `S >: NonEmpty` introduces a type parameter S that can range only over supertypes of NonEmpty.
+So S could be one of NonEmpty, IntSet, AnyRef, or Any.
 
 
