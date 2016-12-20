@@ -51,3 +51,5 @@ etc
 ```
 
 Similarly the `scala.Int` can also be represented using classes.
+
+### Functions as Objects
