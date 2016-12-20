@@ -30,5 +30,5 @@ SBT (Scala Build Tool) is for Scala projects what Maven is for Java projects.
 ### Submitting Assignments
 ```
 sbt
-submit rohitvg@gmail.com suBmISsioNPasSwoRd
+submit email@gmail.com suBmISsioNPasSwoRd
 ```
