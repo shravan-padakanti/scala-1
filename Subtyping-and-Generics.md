@@ -24,8 +24,7 @@ def assertAllPos(s: IntSet): IntSet
 ```
 In most situations this is fine, but can one be more precise?
 
-One might want to express that `assertAllPos` takes Empty sets to Empty sets and NonEmpty sets to NonEmpty sets.
-A way to express this is:
+Here if `assertAllPos` takes Empty set, it returns Empty sets and  if it takes NonEmpty sets it returns NonEmpty sets. The above definition does not express this. A way to express this is using **bounds**:
 ```scala
 def assertAllPos[S <: IntSet](r: S): S = ...
 ```
