@@ -87,4 +87,4 @@ Also what if you want to simplify the expressions, say using the rule:
 ```
 a * b + a * c -> a * (b + c)
 ```
-Problem: This is a non-local simplification. It cannot be encapsulated in the method of a single object. You are back to square one; you need test and access methods for all the different subclasses.
+**Problem**: This is a non-local simplification. It cannot be encapsulated in the method of a single object. You are back to square one; you need test and access methods for all the different subclasses.
