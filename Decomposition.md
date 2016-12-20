@@ -61,6 +61,7 @@ def eval(e: Expr): Int = {
     else throw new Error(”Unknown expression ” + e)
 }
 ```
-Here 
-**+** no need for classification methods, access methods only for classes where the value is defined.
-**–** low-level and potentially unsafe.
+Here:
+
+* **Pros:** no need for classification methods, access methods only for classes where the value is defined.
+* **Cons:** low-level and potentially unsafe.
