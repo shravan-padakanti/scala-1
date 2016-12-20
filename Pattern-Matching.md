@@ -32,7 +32,7 @@ object Sum {
     def apply(e1: Expr, e2: Expr) = new Sum(e1, e2)
 }
 ```
-So you can write Number(1) instead of new Number(1).
+So you can write `Number(1)` instead of `new Number(1)`.
 However, these classes are now empty. So how can we access the members?
 
 ## Pattern Matching
@@ -45,6 +45,10 @@ def eval(e: Expr): Int = e match {
     case Number(n) => n
     case Sum(e1, e2) => eval(e1) + eval(e2)
 }
+
+// So 
+eval(4) // will match case Number
+eval(4+3) // will match case Sum
 ```
 
 Rules:
