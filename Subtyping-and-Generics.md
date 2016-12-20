@@ -32,12 +32,16 @@ def assertAllPos[S <: IntSet](r: S): S = ...
 Here, `<: IntSet` is an **upper bound** of the type parameter S: It means that S can be instantiated only to types that conform to IntSet. <br/>
 
 ### Upper Bounds
-* `[S <: T]` means: S is a subtype of T, and
+* `[S <: T]` means: S is a subtype of T.
 Eg. If T is `IntSet`, then S could be one of `NonEmpty` or `IntSet`.
 
 ### Lower Bounds
 * `[S >: T]` means: S is a supertype of T, or T is a subtype of S.
 Eg. If T is `NonEmpty`, then S could be one of `NonEmpty`, `IntSet`, `AnyRef`, or `Any`.
+
+### Mixed Bounds
+* `[S >: T2 <: T1]` means: s is any type on interval between T1 and T2.
+Eg. if T2 is `NonEmpty` and T1 is `IntSet`, then S is any type on the interval between `NonEmpty` and `IntSet.
 
 
 
