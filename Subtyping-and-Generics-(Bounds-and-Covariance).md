@@ -150,3 +150,7 @@ class Nil extends List[Nothing] { //Nothing type is at the bottom of Scala’s t
    ...
 }
 
+//usage
+val v : List[String] = Nil
+```
+
