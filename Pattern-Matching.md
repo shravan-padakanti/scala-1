@@ -35,7 +35,7 @@ object Sum {
 So you can write `Number(1)` instead of `new Number(1)`.
 However, these classes are now empty. So how can we access the members?
 
-## Pattern Matching
+### Pattern Matching
 
 Pattern matching is a generalization of `switch` from **C/Java** to class hierarchies.
 It’s expressed in Scala using the keyword `match`:
