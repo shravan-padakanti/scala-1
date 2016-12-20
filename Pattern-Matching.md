@@ -89,3 +89,6 @@ trait Expr {
         case Sum(e1, e2) => e1.eval + e2.eval
     }
 }
+
+
+So here the limitations mentioned at the top of the page are resolved.
