@@ -13,6 +13,8 @@ package idealized.scala
 abstract class Boolean extends AnyVal {
     // arg t is the expression for the 'if then' part and 
     // arg e is the expression for the 'else' part.
+    // so basically instead of if (condition) x else y, with this
+    // class we will use condition.ifThenElse(x, y)
     // We will define the other operators using this 
     // method.
     def ifThenElse[T](t: => T, e: => T): T
