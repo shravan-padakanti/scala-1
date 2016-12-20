@@ -3,11 +3,11 @@ Suppose you want to write a small interpreter for arithmetic expressions.
 To keep it simple, let’s restrict ourselves to numbers and additions with the following implementations:
 ```scala
 trait Expr {
-    def isNumber: Boolean
-    def isSum: Boolean
-    def numValue: Int
-    def leftOp: Expr
-    def rightOp: Expr
+    def isNumber: Boolean        // for classification if its a num or sum
+    def isSum: Boolean           // for classification if its a num or sum
+    def numValue: Int            // for access
+    def leftOp: Expr             // for access
+    def rightOp: Expr            // for access
 }
 
 class Number(n: Int) extends Expr {
@@ -35,9 +35,9 @@ def eval(e: Expr): Int = {
 }
 ```
 **Problem**: Writing all these classification and accessor functions quickly becomes tedious! So, what happens if you want to add new expression forms, say
-```
+```scala
 class Prod(e1: Expr, e2: Expr) extends Expr // e1 * e2
 class Var(x: String) extends Expr           // Variable ‘x’
 ```
-You need to add methods for classification and access to all classes defined above.
+You need to add methods for classification and access to all classes defined above i.e. we will need `isProd`, access to product expressions, `isVar`, access to variable value.
 
