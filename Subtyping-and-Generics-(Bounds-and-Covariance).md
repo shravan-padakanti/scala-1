@@ -87,5 +87,8 @@ val s: NonEmpty = a(0)
 ```
 Scala gives a type error in line 2, since in Scala Arrays are **not covariant**.
 
+### Details:
+
+Lists are immutable and Arrays are mutable. So types which are mutable should not be covariant.
 
 
