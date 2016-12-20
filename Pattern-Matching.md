@@ -52,8 +52,23 @@ eval(4+3) // will match case Sum
 ```
 
 Rules:
-* match is followed by a sequence of cases, pat => expr.
+* match is followed by a sequence of cases, `pat => expr`.
 * Each case associates an expression expr with a pattern pat.
-* A MatchError exception is thrown if no pattern matches the value of the selector.
+* A `MatchError exception` is thrown if no pattern matches the value of the selector.
+
+### Forms of Patterns
+
+Patterns are constructed from:
+* constructors, e.g. Number, Sum,
+* variables, e.g. n, e1, e2,
+* wildcard patterns _,
+* constants, e.g. 1, true.
+
+More rules: 
+* **Variables always begin with a lowercase letter.**
+* The same variable name can only appear once in a pattern. So, Sum(x, x) is not a legal pattern.
+* **Names of constants begin with a capital letter**, with the exception of the reserved words null, true, false.
+
+### Evaluating Match Expressions
 
 
