@@ -20,4 +20,4 @@
 
 **Week 4**
 
-* [Lecture 1](https://github.com/rohitvg/scala-principles-1/wiki/Lecture-1)
+* [Objects-Everywhere](https://github.com/rohitvg/scala-principles-1/wiki/Objects-Everywhere)
