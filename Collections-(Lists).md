@@ -51,3 +51,33 @@ So the expression above is equivalent to
 Nil.::(4).::(3).::(2).::(1)
 ```
 
+### List Operations
+All operations on lists can be expressed in terms of the following three operations:
+1. **head** the first element of the list
+2. **tail** the list composed of all the elements except the first.
+3. **isEmpty** ‘true‘ if the list is empty, ‘false‘ otherwise.
+These operations are defined as methods of objects of type list. For example:
+```scala
+fruit.head == ”apples”
+fruit.tail.head == ”oranges”
+diag3.head == List(1, 0, 0)
+empty.head == throw new NoSuchElementException(”head of empty list”)
+```
+
+### List Patterns
+It is also possible to decompose lists with pattern matching. Patterns:
+```
+Nil                     The Nil constant
+p :: ps                 A pattern that matches a list with a head matching p and a tail matching ps.
+List(p1, ..., pn)       same as p1 :: ... :: pn :: Nil
+```
+Example
+```
+1 :: 2 :: xs     Lists of that start with 1 and then 2
+x :: Nil         Lists of length 1
+List(x)          Same as x :: Nil
+List()           The empty list, same as Nil
+List(2 :: xs)    A list that contains as only element another list that starts with 2.
+```
+
+### Sorting Lists
