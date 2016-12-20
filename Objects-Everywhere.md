@@ -106,5 +106,5 @@ f.apply(7)
 Note that the apply **method** in this **function** is not an object, else it would expand to a `new Function` containing an apply method and cause an **infinite loop**.
 
 ## Functions and Methods
-> A **Function Type ** is (roughly) a type of the form (T1, ..., Tn) => U, which is a shorthand for the trait FunctionN in the standard library. Anonymous Functions and Method Values have function types, and function types can be used as part of value, variable and function declarations and definitions. In fact, it can be part of a method type.
-> A  **Method Type ** is a non-value type. That means there is no value - no object, no instance - with a method type. As mentioned above, a Method Value actually has a Function Type. A method type is a def declaration - everything about a def except its body.
+> A **Function Type** is (roughly) a type of the form (T1, ..., Tn) => U, which is a shorthand for the trait FunctionN in the standard library. Anonymous Functions and Method Values have function types, and function types can be used as part of value, variable and function declarations and definitions. In fact, it can be part of a method type.
+> A  **Method Type** is a non-value type. That means there is no value - no object, no instance - with a method type. As mentioned above, a Method Value actually has a Function Type. A method type is a def declaration - everything about a def except its body.
