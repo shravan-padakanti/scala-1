@@ -65,3 +65,26 @@ Here:
 
 * **Pros:** no need for classification methods, access methods only for classes where the value is defined.
 * **Cons:** low-level and potentially unsafe.
+
+### Solution 1: Object-Oriented Decomposition
+
+```scala
+trait Expr {
+    def eval: Int
+}
+
+class Number(n: Int) extends Expr {
+    def eval: Int = n
+}
+
+class Sum(e1: Expr, e2: Expr) extends Expr {
+    def eval: Int = e1.eval + e2.eval
+}
+```
+But what happens if you’d like to display expressions now? You have to define new methods in all the subclasses.
+
+Also what if you want to simplify the expressions, say using the rule:
+```
+a * b + a * c -> a * (b + c)
+```
+Problem: This is a non-local simplification. It cannot be encapsulated in the method of a single object. You are back to square one; you need test and access methods for all the different subclasses.
