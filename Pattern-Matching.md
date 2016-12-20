@@ -69,6 +69,5 @@ More rules:
 * The same variable name can only appear once in a pattern. So, Sum(x, x) is not a legal pattern.
 * **Names of constants begin with a capital letter**, with the exception of the reserved words null, true, false.
 
-### Evaluating Match Expressions
 
 
