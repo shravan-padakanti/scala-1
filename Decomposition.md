@@ -39,5 +39,28 @@ def eval(e: Expr): Int = {
 class Prod(e1: Expr, e2: Expr) extends Expr // e1 * e2
 class Var(x: String) extends Expr           // Variable ‘x’
 ```
-You need to add methods for classification and access to all classes defined above i.e. we will need `isProd`, access to product expressions, `isVar`, access to variable value.
+You need to add methods for classification and access to all classes defined above i.e. we will need `isProd`, access to product expressions, `isVar`, access to variable value, etc. Just for sum and number we have defined 10 methods.
 
+So how to address this issue?
+
+### Non-Solution: Type Tests and Type Casts
+
+A "hacky" solution could use type tests and type casts. Scala let’s you do these using methods defined in class `Any`:
+```scala
+def isInstanceOf[T]: Boolean // checks whether this object’s type conforms to ‘T‘
+def asInstanceOf[T]: T       // treats this object as an instance of type ‘T‘
+                             // throws ‘ClassCastException‘ if it isn’t.
+
+// So implente the eval as:
+def eval(e: Expr): Int = {
+    if (e.isInstanceOf[Number])
+        e.asInstanceOf[Number].numValue
+    else if (e.isInstanceOf[Sum])
+        eval(e.asInstanceOf[Sum].leftOp) +
+        eval(e.asInstanceOf[Sum].rightOp)
+    else throw new Error(”Unknown expression ” + e)
+}
+```
+Here 
+**+** no need for classification methods, access methods only for classes where the value is defined.
+**–** low-level and potentially unsafe.
