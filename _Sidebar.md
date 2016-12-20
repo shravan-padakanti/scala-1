@@ -21,4 +21,4 @@
 **Week 4**
 
 * [Objects-Everywhere](https://github.com/rohitvg/scala-principles-1/wiki/Objects-Everywhere)
-* [Subtyping and Generics (Bounds and Covariance)](https://github.com/rohitvg/scala-principles-1/wiki/Subtyping-and-Generics-(-Bounds-and-Covariance-))
+* [Subtyping and Generics (Bounds and Covariance)](https://github.com/rohitvg/scala-principles-1/wiki/Subtyping-and-Generics-(Bounds-and-Covariance))
