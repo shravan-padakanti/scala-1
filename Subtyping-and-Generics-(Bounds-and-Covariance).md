@@ -46,5 +46,46 @@ Eg. If T is `NonEmpty`, then S could be one of `NonEmpty`, `IntSet`, `AnyRef`, o
 
 Eg. if T2 is `NonEmpty` and T1 is `IntSet`, then S is any type on the interval between `NonEmpty` and `IntSet.
 
-### Covariance
+## Covariance
+
+There’s another interaction between subtyping and type parameters we need to consider. 
+
+Given:
+```scala
+NonEmpty <: IntSet
+```
+is
+```scala
+List[NonEmpty] <: List[IntSet] ?
+```
+Intuitively, this makes sense: A list of non-empty sets is a special case of a list of arbitrary sets.
+We call types for which this relationship holds **covariant** because their subtyping relationship varies with the type parameter. Thus `Lists` in scala are **covariant**.
+
+Does covariance make sense for all types, not just for List? No. In Scala Arrays are not Covariant.
+
+In Java, Arrays are Covariant i.e. `NonEmpty[] <: IntSet[]`.
+
+But this causes problems. Consider the Java code:
+```java
+NonEmpty [] a = new NonEmpty []{ new NonEmpty (1 , Empty , Empty )}
+IntSet[] b = a
+b[0] = Empty
+NonEmpty s = a [0]
+```
+It looks like we assigned in the last line an `Empty` set to a variable of type `NonEmpty`! The 3rd line would give an `ArrayStoreException` as Java stores a _Type-tag_ for the Array against which it checks at Runtime.
+
+**Question**: So when does it make sense to subtype one type with another?
+**Answer**: **The Liskov Substitution Principle**: _If `A <: B`, then everything one can to do with a value of
+type B one should also be able to do with a value of type A._
+
+The above array example will be written in Scala as follows:
+```scala
+val a: Array[NonEmpty] = Array(new NonEmpty(1, Empty, Empty))
+val b: Array[IntSet] = a
+b(0) = Empty
+val s: NonEmpty = a(0)
+```
+Scala gives a type error in line 2, since in Scala Arrays are **not covariant**.
+
+
 
