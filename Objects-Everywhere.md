@@ -11,12 +11,6 @@ Scala compiler represents or maps `scala.Boolean` by Java's primitive Boolean, b
 package idealized.scala
 
 abstract class Boolean extends AnyVal {
-    // arg t is the expression for the 'if then' part and 
-    // arg e is the expression for the 'else' part.
-    // so basically instead of if (condition) x else y, with this
-    // class we will use condition.ifThenElse(x, y)
-    // We will define the other operators using this 
-    // method.
     def ifThenElse[T](t: => T, e: => T): T
 
     def && (x: => Boolean): Boolean = ifThenElse(x, false)
@@ -35,4 +29,22 @@ object true extends Boolean {
 object false extends Boolean {
     def ifThenElse[T](t: => T, e: => T) = e
 }
+```
+So as seen above, in the method `ifThenElse`, arg `t` is the expression for the 'if then' part and arg `e` is the expression for the 'else' part. So basically instead of 
+```scala
+let condition : idealized.scala.Boolean = ...
+if (condition) x else y
+```
+since we are using our own implementation of boolean, the condition will evaluate using `idealized.scala.Boolean` instead of the `scala.Boolean`. Hence we will use it as:
+```scala
+condition.ifThenElse(x, y)
+```
+Similarly, we will use the other operators as:
+```scala
+let condition1 : idealized.scala.Boolean = ...
+let condition2 : idealized.scala.Boolean = ...
+
+condition1 && condition 2
+condition1 == condition 2 
+etc
 ```
