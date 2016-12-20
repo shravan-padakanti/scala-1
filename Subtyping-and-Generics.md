@@ -10,6 +10,8 @@ Here we will look at their interaction:
 
 ## Type Bounds
 
+We have the class hierarchy `Any` > `AnyRef` > `IntSet` > `Empty` and `NonEmpty`
+
 Consider the method `assertAllPos` which
 
 * takes an IntSet
@@ -32,12 +34,12 @@ Here, `<: IntSet` is an **upper bound** of the type parameter S: It means that S
 
 ### Upper Bounds
 Generally, the notation.
-* S <: T means: S is a subtype of T, and
-* S >: T means: S is a supertype of T, or T is a subtype of S.
+* `[S <: T]` means: S is a subtype of T, and
+* `[S >: T]` means: S is a supertype of T, or T is a subtype of S.
 
 ### Lower Bounds
 You can also use a lower bound for a type variable.
-Example: `S >: NonEmpty` introduces a type parameter S that can range only over supertypes of NonEmpty.
-So S could be one of NonEmpty, IntSet, AnyRef, or Any.
+Example: `[S >: T]` introduces a type parameter S that can range only over supertypes of T.
+So if T is NonEmpty, then S could be one of NonEmpty, IntSet, AnyRef, or Any.
 
 
