@@ -91,4 +91,17 @@ Scala gives a type error in line 2, since in Scala Arrays are **not covariant**.
 
 Lists are immutable and Arrays are mutable. So types which are mutable should not be covariant.
 
+Say C[T] is a parameterized type, and A, B are types such that `A <: B`.
 
+There are 3 possible relationships between C[A] and C[B]:
+```
+C[A] <: C[B]                                    // C is covariant
+C[A] <: C[B]                                    // C is contravariant
+neither C[A] or C[B] is a subtype of the other  // C is nonvariant
+```
+Scala lets you declare the variance of a type by annotating the type parameter:
+```
+class C[+A]
+class C[-A]
+class C[A]
+```
