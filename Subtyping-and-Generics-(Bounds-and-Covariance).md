@@ -146,7 +146,7 @@ trait List[+T] {
    ...
 }
 
-class Nil extends List[Nothing] {
+class Nil extends List[Nothing] { //Nothing type is at the bottom of Scala’s type hierarchy
    ...
 }
 
