@@ -49,3 +49,5 @@ condition1 && condition 2
 condition1 == condition 2 
 etc
 ```
+
+Similarly the `scala.Int` can also be represented using classes.
