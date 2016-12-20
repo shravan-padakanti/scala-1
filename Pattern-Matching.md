@@ -80,7 +80,7 @@ Once the first matching case is found, the whole match expression is rewritten t
 
 ### Pattern Matching and Methods
 
-Of course, it’s also possible to define the evaluation function as a method of the base trait.
+Of course, it’s also possible to define the evaluation function as a method of the base classes or traits in the hierarchy.
 Example
 ```
 trait Expr {
