@@ -46,5 +46,5 @@ Eg. If T is `NonEmpty`, then S could be one of `NonEmpty`, `IntSet`, `AnyRef`, o
 
 Eg. if T2 is `NonEmpty` and T1 is `IntSet`, then S is any type on the interval between `NonEmpty` and `IntSet.
 
-
+### Covariance
 
