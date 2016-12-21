@@ -64,6 +64,12 @@ diag3.head == List(1, 0, 0)
 empty.head == throw new NoSuchElementException(”head of empty list”)
 ```
 
+### List Concatenations:
+The `:::` can be used to concatenate 2 lists.
+```scala
+list1 ::: list2  // concatenation of two lists
+```
+
 ### List Patterns
 It is also possible to decompose lists with pattern matching. Patterns:
 ```
