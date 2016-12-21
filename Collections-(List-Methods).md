@@ -51,7 +51,7 @@ def init[T](xs: List[T]): List[T] = xs match {
 }
 ```
 
-### Concatenation
+### concatenation
 
 How can concatenation be implemented? So far, everything we've done has been with a pattern-match on the list in question - now there are *two* lists. oh man... which list should we pattern match on? In this case, the first element of the result list here clearly depends on `xs` - so it makes sense to match on that.
 
