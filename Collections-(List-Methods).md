@@ -27,7 +27,9 @@ http://www.scala-lang.org/api/2.12.x/scala/collection/immutable/List.html
 
 We know that the complexity of `head` is a simple field selection; it's a very small, **constant time**. Can `last` be implemented as efficiently? `tail` again is just a simple selection of a field of a list, ie constant time; can `init` be implemented as efficiently?
 
-###Implementation of last
+## Some implementations of List functions:
+
+### last
 
 ```scala
 def last[T](xs: List[T]): T = xs match {
@@ -39,7 +41,7 @@ def last[T](xs: List[T]): T = xs match {
 
 So `last` takes steps proportional to the length of the list `xs` - we need to take one recursion for each element in the list.
 
-###Implementation of init
+### init
 
 ```scala
 def init[T](xs: List[T]): List[T] = xs match {
@@ -49,7 +51,7 @@ def init[T](xs: List[T]): List[T] = xs match {
 }
 ```
 
-###Implementation of Concatenation
+### Concatenation
 
 How can concatenation be implemented? So far, everything we've done has been with a pattern-match on the list in question - now there are *two* lists. oh man... which list should we pattern match on? In this case, the first element of the result list here clearly depends on `xs` - so it makes sense to match on that.
 
@@ -62,7 +64,7 @@ def concat[T](xs: List[T], ys: List[T]) = xs match {
 
 What is the complexity of `concat`? Well, it's clear that we'll need a call of `concat` for each element of the left list, so complexity will correspond to the length of the list `xs`.
 
-###Implementation of reverse
+### reverse
 
 ```scala
 def reverse[T](xs: List[T]): List[T] = xs match {
