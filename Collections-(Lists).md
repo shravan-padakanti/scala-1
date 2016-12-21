@@ -68,7 +68,7 @@ empty.head == throw new NoSuchElementException(”head of empty list”)
 The `:::` or `++` can be used to concatenate 2 lists.
 ```scala
 list1 ::: list2  // concatenation of two lists
-list1 +++ list2  // concatenation of two lists
+list1 ++ list2  // concatenation of two lists
 ```
 
 ### List Patterns
