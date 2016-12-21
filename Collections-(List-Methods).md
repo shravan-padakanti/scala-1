@@ -31,9 +31,9 @@ We know that the complexity of `head` is a simple field selection; it's a very s
 
 ```scala
 def last[T](xs: List[T]): T = xs match {
-	case List() => throw new Error("last of empty list")
-	case List(x) => x
-	case y :: ys => last(ys)
+    case List() => throw new Error("last of empty list")
+    case List(x) => x
+    case y :: ys => last(ys)
 }
 ```
 
@@ -43,26 +43,20 @@ So `last` takes steps proportional to the length of the list `xs` - we need to t
 
 ```scala
 def init[T](xs: List[T]): List[T] = xs match {
-	case List() => throw new Error("init of empty list")
-	case List(x) => List()
-	case y :: ys => y :: init(ys)
+    case List() => throw new Error("init of empty list")
+    case List(x) => List()
+    case y :: ys => y :: init(ys)
 }
 ```
 
 ###Implementation of Concatenation
 
-How can concatenation be implemented? Recall that `xs ::: ys` is really the same as the call of the method ` ::: ` with receiver `ys`, and `xs` as the argument - ie, `ys.:::(xs)`. It's the prepend of `xs` on top of `ys`. Very much like the prepend function we wrote last week, except of an entire list instead of a single element.
-
-So far, everything we've done has been with a pattern-match on the list in question - now there are *two* lists. oh man... which list should we pattern match on?
-
-When we've done this pattern matching we've typically constructed lists from left to right - we were asking the question "what's the first element of the result list, and what's the remainder?".
-
-In this case, the first element of the result list here clearly depends on `xs` - so it makes sense to match on that.
+How can concatenation be implemented? So far, everything we've done has been with a pattern-match on the list in question - now there are *two* lists. oh man... which list should we pattern match on? In this case, the first element of the result list here clearly depends on `xs` - so it makes sense to match on that.
 
 ```scala
 def concat[T](xs: List[T], ys: List[T]) = xs match {
-	case List() => ys
-	cast z :: zs => z :: concat(zs, ys)
+    case List() => ys
+    case z :: zs => z :: concat(zs, ys)
 }
 ```
 
@@ -72,8 +66,8 @@ What is the complexity of `concat`? Well, it's clear that we'll need a call of `
 
 ```scala
 def reverse[T](xs: List[T]): List[T] = xs match {
-	case List() => xs
-	case y :: ys => reverse(ys) ++ List(y)
+    case List() => xs //return empty list as is
+    case y :: ys => reverse(ys) ++ List(y)
 }
 ```
 
@@ -81,4 +75,4 @@ What's the complexity of `reverse`? Well, we know that concatenation is linear, 
 
 Furthermore, we do one step for each element in the reversed list, because we go through each element of `ys` and put it at the end of the reversed list.
 
-So, taken together, that gives us a quadratic complexity of N * N, which is a bit disappointing. We all know that with an array or a mutable linked list of pointers that we could reverse in linear time - we'll see later on how we might do better.
+So, taken together, that gives us a quadratic complexity of **N * N**, which is a bit disappointing. We all know that with an array or a mutable linked list of pointers that we could reverse in linear time - we'll see later on how we might do better.
