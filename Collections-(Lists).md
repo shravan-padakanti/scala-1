@@ -7,7 +7,7 @@ val nums  = List(1, 2, 3, 4)
 val diag3 = List(List(1, 0, 0), List(0, 1, 0), List(0, 0, 1))
 val empty = List()
 ```
-![scala lists visualization](scala_lists_visualization)
+![scala lists visualization](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/scala_lists_visualization.png)
 
 Like arrays, lists are homogeneous: the elements of a list must all have the same type.
 The type of a list with elements of type T is written `scala.List[T]` or shorter `just List[T]`
