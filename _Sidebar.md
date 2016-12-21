@@ -28,3 +28,5 @@
 
 **Week 5**
 
+* [Collections (List Methods)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(List-Methods))
+* 
