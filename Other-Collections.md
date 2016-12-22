@@ -44,9 +44,9 @@ Another simple kind of sequence is the range. It represents a sequence of evenly
 Three operators:
 `to` (inclusive), `until` (exclusive), `by` (to determine step value):
 ```scala
-val r: Range = 1 until 5
-val s: Range = 1 to 5
-1 to 10 by 3
-6 to 1 by -2
+val r: Range = 1 until 5   // 1, 2, 3, 4
+val s: Range = 1 to 5      // 1, 2, 3, 4, 5
+1 to 10 by 3               // 1, 4, 7, 10
+6 to 1 by -2               // 6, 4, 2
 ```
 Ranges a represented as single objects with three fields: lower bound, upper bound, step value.
