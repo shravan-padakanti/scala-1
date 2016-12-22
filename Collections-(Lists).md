@@ -91,7 +91,7 @@ List(2 :: xs)    A list that contains as only element another list that starts w
 Suppose we want to sort a list of numbers in ascending order:
 * One way to sort the list `List(7, 3, 9, 2)` is to sort the tail `List(3, 9, 2)` to obtain `List(2, 3, 9)`.
 * The next step is to insert the head `7` in the right place to obtain the result `List(2, 3, 7, 9)`.
-This idea describes **Insertion Sort** :
+This idea describes **Insertion Sort** (`O(n^2)`): :
 ```scala
 def isort(xs: List[Int]): List[Int] = xs match {
     case List() => List()
