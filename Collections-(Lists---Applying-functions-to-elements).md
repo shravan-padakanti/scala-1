@@ -45,7 +45,7 @@ abstract class List[T] {
 
 ### Variations of filter
 ```scala
-xs filter p	// The list consisting of those elements of xs that satisfy the predicate p.
+xs filter p     // The list consisting of those elements of xs that satisfy the predicate p.
 xs filterNot p	// The list consisting of those elements of xs that do not satisfy the predicate p.
 xs partition p  // Split xs into a pair of lists; one with elements that satisfy the predicate p, the other with elements that do not, giving the pair of lists `(xs filter p, xs.filterNot p)`
 xs takeWhile p  // The longest prefix of elements in the list that all satisfy p.
