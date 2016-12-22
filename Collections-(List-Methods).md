@@ -112,6 +112,7 @@ def merge(xs: List[Int], ys: List[Int]) = xs match {
 	}
 }
 ```
+This implementation of `merge` has nested pattern match, and also it does not reflect the symmetry of the merge sort algorithm. A better version will be show using pairs with pattern matching later.
 
 ### splitAt function
 
