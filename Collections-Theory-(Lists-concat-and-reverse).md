@@ -5,4 +5,9 @@
 **A**: Done using **Structural Induction**: (prove that it holds for base case p(Nil), and for a lists `xs` and element `x`, if `p(xs)` holds, then for `p(x :: xs)` also holds.<br/>
 This is analogus to **Natural induction**: (prove that it holds for p(base case) and if it holds for p(n) then it also holds for p(n+1).
 
+# Reasoning behind List Reverse
+
+Done using induction again.
+
+---
 This and the next lecture are mathematical proofs. Not required for programming in Scala, or for any assignments.
