@@ -1,6 +1,6 @@
 # Pair and Tuples
 
-A pair in scala is written `(x,y)`, where `x` and `y` are the elements of the pair.
+A **pair** in scala is written `(x,y)`, where `x` and `y` are the elements of the pair.
 ```scala
 val pair = ("answer", 42)
 ```
@@ -18,7 +18,7 @@ label = pair._1
 value = pair._2
 ```
 
-This works the same with tuples of **more than two elements**; you can have **triples**, **quadruples**, etc.
+This works the same with **tuples** of **more than two elements**; you can have **triples**, **quadruples**, etc.
 
 ### Translation of Tuples
 
