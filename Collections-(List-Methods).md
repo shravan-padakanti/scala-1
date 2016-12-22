@@ -81,7 +81,7 @@ So, taken together, that gives us a quadratic complexity of **N * N**, which is 
 
 ## Sorting Lists Faster
 
-Previously we saw [Insertion Sort](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists)#sorting-lists). Here is **Merge Sort**:
+Previously we saw [Insertion Sort](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists)#sorting-lists). Here is **Merge Sort** (`O(nlogn)`):
 
 Idea: 
 * If the list consists of zero or one elements, it is already sorted.
