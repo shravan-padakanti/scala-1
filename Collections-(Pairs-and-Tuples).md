@@ -18,9 +18,6 @@ def msort(xs List[Int]): List[Int] = {
 		merge(msort(fst), msort(snd))
 	}
 }
-```
-
-let's look at an implementation of `merge`:
 
 // Will be improved later!!
 def merge(xs: List[Int], ys: List[Int]) = xs match {
