@@ -23,7 +23,7 @@ Using `reduceLeft`, we can simplify:
 def sum(xs: List[Int])     = (0 :: xs) reduceLeft ((x,y) => x + y)
 def product(xs: List[Int]) = (1 :: xs) reduceLeft ((x,y) => x * y)
 ```
-
+This pattern is used on lists tending towards the left. See figure below.
 ### Shorter Way to Write Functions
 
 Instead of writing `((x,y) => x * y)`, we can also just write `(_ * _)`.
