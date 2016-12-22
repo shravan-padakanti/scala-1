@@ -67,8 +67,8 @@ Solutiion:
 ```scala
 pack[T]( list: List[T] ): List[List[T]] = xs match {
     case Nil => Nil
-    case x :: xs => {
-        val (first, rest) = xs span (y => y == x)
+    case y :: ys => {
+        val (first, rest) = ys span (arg => arg == y)  // y is the head, ys is the tail
         first :: pack(rest)
     }
 }
