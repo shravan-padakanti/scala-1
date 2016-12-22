@@ -33,3 +33,11 @@
 * [Collections (Lists - Applying functions to elements)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists---Applying-functions-to-elements))
 * [Collections (Lists Reduction)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists-Reduction))
 * [Collections Theory (Lists concat and reverse)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-Theory-(Lists-concat-and-reverse))
+
+**Week 6**
+
+* [Other Colellections]()
+* [Combinatorial Search and For Expressions]()
+* [Combinatorial Search Example]()
+* [Collections (Maps)]()
+* [Conclusion]()
