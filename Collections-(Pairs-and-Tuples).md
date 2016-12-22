@@ -8,11 +8,18 @@ val pair = ("answer", 42)
 
 The type of the above pair is `(String, Int)`
 
-We can also decompose pairs using pattern matching, like this:
-
+Pairs can be decomposed by pattern matching: 
 ```scala
+val pair = ("answer", 42)
 val (label, value) = pair // label: String = answer; value: Int = 42
 ```
+Also, the fields of the pair can be directly accessed by `_1`,`_2`:
+```scala
+val pair = ("answer", 42)
+label = pair._1
+value = pair._2
+```
+
 This works the same with tuples of **more than two elements**; you can have **triples**, **quadruples**, etc.
 
 ### Translation of Tuples
