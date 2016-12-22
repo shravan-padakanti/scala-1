@@ -113,7 +113,7 @@ def merge(xs: List[Int], ys: List[Int]) = xs match {
 }
 ```
 
-## splitAt function
+### splitAt function
 
 The `splitAt` function on lists returns two sublists - the elements up to the given index, and the elements from that index. The lists are returned in a *pair*.
 
