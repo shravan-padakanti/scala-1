@@ -14,12 +14,36 @@ This can be again generalized using patterns `ReduceLeft`, `foldLeft`, `ReduceRi
 ### ReduceLeft
 
 This pattern can be abstracted out using the generic method `reduceLeft`, which inserts a given binary operator between each successive element of a list.
-
-`List(x1, ..., xn)  reduceLeft op = (...(x1 op x2) op ...) op xn`
-
+```scala
+List(x1, ..., xn)  reduceLeft op = (...(x1 op x2) op ...) op xn
+```
 Using `reduceLeft`, we can simplify:
 
 ```scala
-def sum(xs: List[Int]) = (0 :: xs) reduceLeft ((x,y) => x + y)
+def sum(xs: List[Int])     = (0 :: xs) reduceLeft ((x,y) => x + y)
 def product(xs: List[Int]) = (1 :: xs) reduceLeft ((x,y) => x * y)
+```
+
+### Shorter Way to Write Functions
+
+Instead of writing `((x,y) => x * y)`, we can also just write `(_ * _)`.
+
+Every `_` represents a new parameter, going from left to right. The parameters are implicitly defined at the next outer pair of parentheses (or the whole expression if there are no enclosing parentheses)
+
+So:
+```scala
+def sum(xs: List[Int])     = (0 :: xs) reduceLeft ( _ + _ )
+def product(xs: List[Int]) = (1 :: xs) reduceLeft ( _ * _ )
+```
+
+### FoldLeft
+
+The function `reduceLeft` is defined in terms of a more general function, `foldLeft`. It's like `reduceLeft`, but it takes an **accumulator**, or zero-element `z`, which is returned when `foldLeft` is called on an empty list.
+```scala
+(List(x1, ..., xn) foldLeft z)(op) = (...(z op x1) op ...) op xn
+```
+So,
+```scala
+def	sum(xs: List[Int]) = (xs foldLeft 0) (_ + _)
+def product(xs: List[Int]) = (xs foldLeft 1) (_ * _)
 ```
