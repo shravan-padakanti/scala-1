@@ -71,3 +71,15 @@ Applications of `foldLeft` and `reduceLeft` unfold on trees that lean to the lef
 List(x1, ..., xn)  reduceRight op   = x1 op ( ... (x(n-1) op xn) ... )
 (List(x1, ..., xn) foldRight z)(op) = x1 op ( ... (xn op acc) ... )
 ```
+
+Here is another implementation of Concat
+```scala
+def concat[T](xs: List[T], ys: List[T]) List[T] = {
+    (xs foldRight ys) ( _ :: _ )
+}
+```
+Here, it isn't possible to replace `foldRight` by `foldLeft`. why? The types don't match up. We end up trying to do a `foldLeft` over a list `xs`, meaning we apply an operation over each element of that list - the operation cons is not applicable to arbitrary elements (the accumulators), only lists. Since the order of arguments in `foldRight` is different than `foldLeft` as shown below, we cannot use foldLeft above:
+```scala
+xs.foldRight(ys){(element, aggregator) => element :: aggregator}
+xs.foldLeft(ys){(aggregator, element) => element :: aggregator}
+```
