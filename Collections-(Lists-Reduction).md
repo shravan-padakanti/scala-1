@@ -48,6 +48,8 @@ def	sum(xs: List[Int]) = (xs foldLeft 0) (_ + _)
 def product(xs: List[Int]) = (xs foldLeft 1) (_ * _)
 ```
 
+![fold_left_implementation](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/fold_left_implementation.png)
+
 ### Implementations of ReduceLeft and FoldLeft
 
 ```scala
@@ -71,6 +73,10 @@ Applications of `foldLeft` and `reduceLeft` unfold on trees that lean to the lef
 List(x1, ..., xn)  reduceRight op   = x1 op ( ... (x(n-1) op xn) ... )
 (List(x1, ..., xn) foldRight z)(op) = x1 op ( ... (xn op acc) ... )
 ```
+
+![fold_reduce_right](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/fold_reduce_right.png)
+
+### Concat again
 
 Here is another implementation of Concat
 ```scala
