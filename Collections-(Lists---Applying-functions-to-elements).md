@@ -50,4 +50,4 @@ xs filterNot p	// The list consisting of those elements of xs that do not satisf
 xs partition p  // Split xs into a pair of lists; one with elements that satisfy the predicate p, the other with elements that do not, giving the pair of lists `(xs filter p, xs.filterNot p)`
 xs takeWhile p  // The longest prefix of elements in the list that all satisfy p.
 xs dropWhile p  // The collection without the longest prefix of elements that all satisfy p.
-xs span p       // Split xs according to a predicate, giving the pair of collections `(xs takeWhile p, xs.dropWhile p)`.
+xs span p       // Split xs according to a predicate, giving the pair of collections `(xs takeWhile p, xs.dropWhile p)`, computed in a single traversal.
