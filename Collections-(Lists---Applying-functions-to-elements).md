@@ -51,7 +51,7 @@ xs partition p  // Split xs into a pair of lists; one with elements that satisfy
 xs takeWhile p  // The longest prefix of elements in the list that all satisfy p (basically 'take' elements 'while' p is true).
 xs dropWhile p  // The list without the longest prefix of elements that all satisfy p (basically 'drop' elements 'while' p is true).
 xs span p       // Split xs according to a predicate, giving the pair of collections `(xs takeWhile p, xs.dropWhile p)`, computed in a single traversal.
-
+```
 ### Example
 
 Write a function to "pack" same elements of a list into a new list:
