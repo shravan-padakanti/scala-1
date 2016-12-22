@@ -78,3 +78,42 @@ What's the complexity of `reverse`? Well, we know that concatenation is linear, 
 Furthermore, we do one step for each element in the reversed list, because we go through each element of `ys` and put it at the end of the reversed list.
 
 So, taken together, that gives us a quadratic complexity of **N * N**, which is a bit disappointing. We all know that with an array or a mutable linked list of pointers that we could reverse in linear time - we'll see later on how we might do better.
+
+## Sorting Lists Faster
+
+Previously we saw [Insertion Sort](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists)#sorting-lists). Here is **Merge Sort**:
+
+Idea: 
+* If the list consists of zero or one elements, it is already sorted.
+* Else, separate the list into two sub-lists, each containing around half the elements of the original list
+* Sort the two sub-lists
+* Merge the two sorted sub-lists into a single sorted list
+
+```scala
+def msort(xs List[Int]): List[Int] = {
+	val n = xs.length / 2
+	if (n == 0) xs
+	else {
+		def merge(xs: List[Int], ys: List[Int]) = ???
+		val (fst, snd) = xs splitAt n
+		merge(msort(fst), msort(snd))
+	}
+}
+
+// Will be improved later!!
+def merge(xs: List[Int], ys: List[Int]) = xs match {
+	case Nil => ys
+	case x :: xs1 => ys match {
+		case Nil => xs
+		case y :: ys 1 => {
+			if (x < y) x :: merge(xs1, ys)
+			else y :: merge(xs, ys1)
+		}
+	}
+}
+```
+
+## splitAt function
+
+The `splitAt` function on lists returns two sublists - the elements up to the given index, and the elements from that index. The lists are returned in a *pair*.
+
