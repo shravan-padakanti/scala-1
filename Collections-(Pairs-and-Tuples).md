@@ -30,7 +30,7 @@ So far, all the types we've encountered are actually abbreviations for some inst
 
 ### Merge sort using Pairs
 
-[Insertion sort](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists)#sorting-lists) was slow (quadratic).
+[Insertion sort](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists)#sorting-lists) was slow (quadratic). <br/>
 Previous implementation of `merge` in [Merge Sort](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(List-Methods)#sorting-lists-faster) had issues as mentioned. 
 
 Here is a better implementation using pattern matching over pairs:
