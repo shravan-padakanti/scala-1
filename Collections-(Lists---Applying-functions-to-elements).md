@@ -64,12 +64,12 @@ should give
 List( List('a','a','a'), List('b','b','b'), List('c','c') )
 ```
 Solutiion:
-```
+```scala
 pack[T]( list: List[T] ): List[List[T]] = xs match {
     case Nil => Nil
     case x :: xs => {
         val (first, rest) = xs span (y => y == x)
         first :: pack(rest)
     }
-
 }
+```
