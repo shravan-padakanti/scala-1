@@ -11,7 +11,7 @@ def sum(xs: List[Int]): Int = xs match {
 ```
 This can be again generalized using patterns `ReduceLeft`, `foldLeft`, `ReduceRight`
 
-### ReduceLeft
+### ReduceLeft (reduce from left)
 
 This pattern can be abstracted out using the generic method `reduceLeft`, which inserts a given binary operator between each successive element of a list.
 ```scala
@@ -36,7 +36,7 @@ def sum(xs: List[Int])     = (0 :: xs) reduceLeft ( _ + _ )
 def product(xs: List[Int]) = (1 :: xs) reduceLeft ( _ * _ )
 ```
 
-### FoldLeft
+### FoldLeft (fold from left)
 
 The function `reduceLeft` is defined in terms of a more general function, `foldLeft`. It's like `reduceLeft`, but it takes an **accumulator**, or zero-element `z`, which is returned when `foldLeft` is called on an empty list.
 ```scala
@@ -46,4 +46,28 @@ So,
 ```scala
 def	sum(xs: List[Int]) = (xs foldLeft 0) (_ + _)
 def product(xs: List[Int]) = (xs foldLeft 1) (_ * _)
+```
+
+### Implementations of ReduceLeft and FoldLeft
+
+```scala
+abstract class List[T] { ...
+	def reduceLeft(op: (T, T) => T): T = this match {
+		case Nil => throw new Error("Nil.reduceLeft")
+		case x :: xs => (xs foldLeft x)(op)
+	}
+	def foldLeft[U](z: U)(op: (U,T) => U): U = this match {
+		case Nil => z
+		case x :: xs => (xs foldLeft op(z, x))(op)
+	}
+}
+```
+
+### FoldRight, ReduceRight
+
+Applications of `foldLeft` and `reduceLeft` unfold on trees that lean to the left. So trees which lean to right, can use similar `foldRight` and `reduceRight`.
+
+```scala
+List(x1, ..., xn)  reduceRight op   = x1 op ( ... (x(n-1) op xn) ... )
+(List(x1, ..., xn) foldRight z)(op) = x1 op ( ... (xn op acc) ... )
 ```
