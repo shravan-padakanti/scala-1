@@ -10,4 +10,4 @@ This is analogus to **Natural induction**: (prove that it holds for p(base case)
 Done using induction again.
 
 ---
-This and the next lecture are mathematical proofs. Not required for programming in Scala, or for any assignments.
+> This and the next lecture are mathematical proofs. Not required for programming in Scala, or for any assignments.
