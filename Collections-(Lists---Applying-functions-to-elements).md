@@ -54,7 +54,7 @@ xs span p       // Split xs according to a predicate, giving the pair of collect
 
 ### Example
 
-Write a function to 'pack' same elements of a list into a new list:
+Write a function to "pack" same elements of a list into a new list:
 Eg. 
 ```scala
 pack( List("ababacbc".toList") ) 
