@@ -4,7 +4,7 @@ So far we have studied the Lists. Lists are *linear* i.e. access to the first el
 
 Common base class of `List`s and `Vector`s is `Seq` which itself is a subclass of `Iterable`. With `Seq` we also have `Set` and `Map`.
 
-![Collections Hierarchy](collections_hierarchy)
+![Collections Hierarchy](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/collections_hierarchy.png)
 
 **Arrays** and **Strings** : `Arrays` and `Strings` support the same operations as `Seq` and can implicitly be converted to sequences where needed. (They cannot be subclasses of Seq because they come from Java)
 ```scala
@@ -18,7 +18,7 @@ ys filter (_.isUpper)
 
 A Vector is a data structure, which is an array for upto 32 elements. For more elements, this array becomes a array of pointers to 32 more arrays, thus it can store 1024 elements. Once this ies exhausted, we get an aray of pointers where each pointer points to another array of pointers which point to the elements. Thus the depth increases logarithmically: log32(N). Hence vectors has more uniform access patterns than lists.
 
-![New and Old Vector](vector)
+![Vector](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/collections_vectors.png)
 
 > When batch operations are recursive on the head, lists are preferred as they have constant time access. If batch operations are bulk on the rest of the list, vectors are preferred.
 
@@ -35,7 +35,7 @@ They support the same operations as lists, with the exception of `::`. Instead o
 
 When we create a new vector using the above operation, since vectors are immutable, we create a new vector (red) and return it. The new vector uses elements from the old one (blue). Hence we have 2 vectors now which use common elements but don't interfere with each other.
 
-![New and Old Vector](new_and_old)
+![New and Old Vector](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/collections_vectors_new.png)
 
 ## Ranges
 
