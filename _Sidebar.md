@@ -31,3 +31,4 @@
 * [Collections (List Methods)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(List-Methods))
 * [Pairs and Tuples](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Pairs-and-Tuples))
 * [Collections (Lists - Applying functions to elements)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists---Applying-functions-to-elements))
+* [Collections (Lists Reduction)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Lists-Reduction))
