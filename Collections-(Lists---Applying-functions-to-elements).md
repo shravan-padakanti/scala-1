@@ -64,7 +64,7 @@ should give
 List( List('a','a','a'), List('b','b','b'), List('c','c') )
 List( ('a',3), ('b',3), ('c',2) )
 ```
-Solutiion:
+Solution:
 ```scala
 def pack[T]( list: List[T] ): List[List[T]] = xs match {
     case Nil => Nil
