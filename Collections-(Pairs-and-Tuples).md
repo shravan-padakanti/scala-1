@@ -27,7 +27,7 @@ def merge(xs: List[Int], ys: List[Int]) = xs match {
 		case y :: ys 1 => {
 			if (x < y) x :: merge(xs1, ys)
 			else y :: merge(xs, ys1)
-                }
+		}
 	}
 }
 ```
