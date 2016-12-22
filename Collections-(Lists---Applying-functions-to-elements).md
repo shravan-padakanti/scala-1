@@ -54,7 +54,7 @@ xs span p       // Split xs according to a predicate, giving the pair of collect
 ```
 ### Example
 
-Write a function to "pack" same elements of a list into a new list:
+Write a function to "pack" same elements of a list into a new list, and then get a list of elements and their count:
 Eg. 
 ```scala
 pack( List("ababacbc".toList") ) 
@@ -62,14 +62,19 @@ pack( List("ababacbc".toList") )
 should give
 ```scala
 List( List('a','a','a'), List('b','b','b'), List('c','c') )
+List( ('a',3), ('b',3), ('c',2) )
 ```
 Solutiion:
 ```scala
-pack[T]( list: List[T] ): List[List[T]] = xs match {
+def pack[T]( list: List[T] ): List[List[T]] = xs match {
     case Nil => Nil
-    case y :: ys => {
-        val (first, rest) = ys span (arg => arg == y)  // y is the head, ys is the tail
+    case y :: ys => {                                  // y is the head, ys is the tail
+        val (first, rest) = ys span (arg => arg == y)  // arg is all the elements of the list, 
         first :: pack(rest)
     }
+}
+
+def encode[t]( list: List[T] ): List[(T, Int)] = {
+     pack(list) map ( arg => (arg.head, arg.length))   // Note that arg will be element of the list - also a list eg. List('a','a','a')
 }
 ```
