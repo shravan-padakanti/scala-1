@@ -50,3 +50,16 @@ val s: Range = 1 to 5      // 1, 2, 3, 4, 5
 6 to 1 by -2               // 6, 4, 2
 ```
 Ranges a represented as single objects with three fields: lower bound, upper bound, step value.
+
+## Some more Sequence oeprations:
+```scala
+xs exists p  // true if there is an element x of xs such that p(x) holds, false otherwise.
+xs forall p  // true if p(x) holds for all elements x of xs, false otherwise.
+xs zip ys    // A sequence of pairs drawn from corresponding elements of sequences xs and ys.
+xs.unzip     // Splits a sequence of pairs xs into two sequences consisting of the first, respectively second halves of all pairs
+xs.flatMap f // Applies collection-valued function f to all elements of xs and concatenates the results
+xs.sum       // The sum of all elements of this numeric collection.
+xs.product   // The product of all elements of this numeric collection
+xs.max       // The maximum of all elements of this collection (an Ordering must exist)
+xs.min       // The minimum of all elements of this collection
+```
