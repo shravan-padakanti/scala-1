@@ -38,6 +38,6 @@
 
 * [Other Colellections](https://github.com/rohitvg/scala-principles-1/wiki/Other-Collections)
 * [Combinatorial Search and For-Expressions](https://github.com/rohitvg/scala-principles-1/wiki/Combinatorial-Search-and-For-Expressions)
-* [Combinatorial Search Example]()
+* [Sets and Combinatorial Search Example](https://github.com/rohitvg/scala-principles-1/wiki/Sets-and-Combinatorial-Search-Example)
 * [Collections (Maps)]()
 * [Conclusion]()
