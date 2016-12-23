@@ -96,8 +96,7 @@ Next, we have to put our `k` queen into a certain column. We can simply try all 
 
 If it is, then we can yield a new solution, which will be our partial solution `col`, augmented by the queen in the new column. So it would be `col :: queens`.
 
-Next we implement `isSafe`.
-
+Next we implement `isSafe`:
 ```scala
 def isSafe(col: Int, queens: List[Int]): Boolean = {
   val row = queens.length
@@ -107,6 +106,7 @@ def isSafe(col: Int, queens: List[Int]): Boolean = {
   }
 }
 ```
+It takes a column to place the new queen and an existing solution until this point, and returns a boolean indicating if it is safe to place the queen in the given column. The row assumed is the next row.
 
 The first thing we want to do is add rows to all the queens we look at here; the row of the queen to be placed will be just `queens.length`, since the other queens are in rows 0 to `n - 1`.
 
