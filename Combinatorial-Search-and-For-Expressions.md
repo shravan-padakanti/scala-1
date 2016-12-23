@@ -24,10 +24,13 @@ This can be achieved by combining until and map:
 ```scala
 (1 until n) map (i => (1 until i) map (j => (i, j)))
 ```
-This generates a vector of vectors (because `range` is a subtype of `seq`. We started with a range (1 until n) and transformed it using a map, which produced a seq. Pairs cannot be elements of range, so what the type inference chose `IndexedSequence`, essentially a sequence that uses random access and sits between `Seq` and `Range`. The prototypical default implementation of an IndexedSequence is just a Vector. 
+This generates a vector of vectors. 
 ``` 
 Vector( Vector(), Vector((2,1)), Vector((3,1), (3,2)) ... , Vector((6,1), (6,2), (6,3), (6,4), (6,5)) )
 ```
+This is because `range` is a subtype of `seq`. We started with a range (1 until n) and transformed it using a map, which produced a seq. Pairs cannot be elements of range, so what the type inference chose `IndexedSequence`, essentially a sequence that uses random access and sits between `Seq` and `Range`. The prototypical default implementation of an IndexedSequence is just a Vector.
+![https://github.com/rohitvg/scala-principles-1/commit/4e6f441b9ebf6a23351b3a5e6661465c68711bac](Indexed Sequence)
+
 This is not right as we generate a collection of pairs. So we want to concatenate the above list. Hence:
 ```scala
 ((1 until n) map (i => (1 until i) map (j => (i, j))) foldRight Seq[Int]())( _ ++ _ )
