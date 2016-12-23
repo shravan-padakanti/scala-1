@@ -17,11 +17,14 @@ A natural way to do this is to:
 * Filter the pairs for which `i + j` is prime.
 
 One natural way to generate the sequence of pairs is to:
-* Generate all the integers i between 1 and n (excluded).
-* For each integer i, generate the list of pairs `(i, 1), ..., (i,i-1)`.
+* Generate all the integers `i` between `1 and n (excluded)`.
+* For each integer `i`, generate the list of pairs `(i, 1), ..., (i,i-1)`.
 
 This can be achieved by combining until and map:
 ```scala
-(1 until n) map (i =>
-(1 until i) map (j => (i, j)))
+(1 until n) map (i => (1 until i) map (j => (i, j)))
+```
+This generates a vector of vectors: 
+``` 
+Vector( Vector(), Vector((2,1)), Vector((3,1), (3,2)) ... , Vector((6,1), (6,2), (6,3), (6,4), (6,5)) )
 ```
