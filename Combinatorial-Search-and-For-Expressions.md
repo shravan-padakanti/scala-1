@@ -22,9 +22,37 @@ One natural way to generate the sequence of pairs is to:
 
 This can be achieved by combining until and map:
 ```scala
-(1 until n) map (i => (1 until i) map (j => (i, j)))
+val xss = (1 until n) map (i => (1 until i) map (j => (i, j)))
 ```
-This generates a vector of vectors: 
+This generates a vector of vectors (because `range` is a subtype of `seq`. We started with a range (1 until n) and transformed it using a map, which produced a seq. Pairs cannot be elements of range, so what the type inference chose `IndexedSequence`, essentially a sequence that uses random access and sits between `Seq` and `Range`. The prototypical default implementation of an IndexedSequence is just a Vector. 
 ``` 
-Vector( Vector(), Vector((2,1)), Vector((3,1), (3,2)) ... , Vector((6,1), (6,2), (6,3), (6,4), (6,5)) )
+xss = Vector( Vector(), Vector((2,1)), Vector((3,1), (3,2)) ... , Vector((6,1), (6,2), (6,3), (6,4), (6,5)) )
 ```
+This is not right as we generate a collection of pairs. So we want to concatenate the above list. Hence:
+```scala
+(xss foldRight Seq[Int]())( _ ++ _ )
+// OR
+xss.flatten // inbuilt method to flatten
+// i.e. 
+(1 until n) map (i => (1 until i) map (j => (i, j))).flatten
+```
+
+We know that the `flatMap` function works in a similar fashion, i.e.
+```scala
+s flatMap f = (xs map f).flatten
+```
+so we can simplify the above expression to:
+```scala
+(1 until n) flatMap (i => (1 until i) map (j => (i, j)))
+```
+Now that we have the desired pair sequence, we need to filter our sequence according to the criterion, that the sum of the pair is prime:
+```scala
+def isPrime(n: Int) = (2 until n) forall (n % _ != 0)
+(1 until n) flatMap  (i => (1 until i) map (j => (i, j))) filter (pair => isPrime(pair._1 + pair._2))
+```
+
+**Problem**: is there a simpler way to organize this expression that makes it more understandable?
+
+## For-Expressions
+
+
