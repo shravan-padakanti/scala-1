@@ -22,19 +22,17 @@ One natural way to generate the sequence of pairs is to:
 
 This can be achieved by combining until and map:
 ```scala
-val xss = (1 until n) map (i => (1 until i) map (j => (i, j)))
+(1 until n) map (i => (1 until i) map (j => (i, j)))
 ```
 This generates a vector of vectors (because `range` is a subtype of `seq`. We started with a range (1 until n) and transformed it using a map, which produced a seq. Pairs cannot be elements of range, so what the type inference chose `IndexedSequence`, essentially a sequence that uses random access and sits between `Seq` and `Range`. The prototypical default implementation of an IndexedSequence is just a Vector. 
 ``` 
-xss = Vector( Vector(), Vector((2,1)), Vector((3,1), (3,2)) ... , Vector((6,1), (6,2), (6,3), (6,4), (6,5)) )
+Vector( Vector(), Vector((2,1)), Vector((3,1), (3,2)) ... , Vector((6,1), (6,2), (6,3), (6,4), (6,5)) )
 ```
 This is not right as we generate a collection of pairs. So we want to concatenate the above list. Hence:
 ```scala
-(xss foldRight Seq[Int]())( _ ++ _ )
+((1 until n) map (i => (1 until i) map (j => (i, j))) foldRight Seq[Int]())( _ ++ _ )
 // OR
-xss.flatten // inbuilt method to flatten
-// i.e. 
-(1 until n) map (i => (1 until i) map (j => (i, j))).flatten
+(1 until n) map (i => (1 until i) map (j => (i, j))).flatten // inbuilt method to flatten
 ```
 
 We know that the `flatMap` function works in a similar fashion, i.e.
