@@ -89,8 +89,8 @@ Instead of `( s )`, braces `{ s }` can also be used, and then the sequence of ge
 The above example can be implemented as:
 ```scala
 for {
-    i <- 1 until n
-    j <- 1 until i
-    if isPrime(i + j)
+    i <- 1 until n        // sequence
+    j <- 1 until i        // sequence
+    if isPrime(i + j)     // filter
 } yield (i, j)
 ```
