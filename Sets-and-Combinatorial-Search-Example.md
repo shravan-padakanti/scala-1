@@ -1,6 +1,6 @@
 So far we have seen forms of `Seq`. Here we will see **Sets**. 
 
-**Sets** Sets are another basic abstraction in the Scala collections are very close to Sequences. **All the elements in a set are unique**.
+**Sets** Sets are another basic abstraction in the Scala collections are very close to Sequences.
 A set is written analogously to a sequence:
 ```scala
 val fruit = Set(”apple”, ”banana”, ”pear”)
@@ -17,8 +17,8 @@ s.nonEmpty
 ### Sets vs Sequences
 
 The principal differences between sets and sequences are:
-1. Sets are unordered; the elements of a set do not have a predefined order in which they appear in the set
-2. sets do not have duplicate elements:
+1. Sets are **unordered**; the elements of a set do not have a predefined order in which they appear in the set
+2. sets **do not have duplicate elements**:
 ``` scala
 s map (_ / 2) // Set(2, 0, 3, 1)
 ```
@@ -27,4 +27,32 @@ s map (_ / 2) // Set(2, 0, 3, 1)
 s contains 5 // true
 ```
 
+## Example: N-Queens
+
+### Problem
+The eight queens problem is to place eight queens on a chessboard so that no queen is threatened by another.
+* In other words, there can’t be two queens in the same row, column, or diagonal.
+We now develop a solution for a chessboard of any size, not just 8. <br/>
+Eg. 
+```
+-------------------------
+|     |  X  |     |     |
+-------------------------
+|     |     |     |  x  |
+-------------------------
+|  x  |     |     |     |
+-------------------------
+|     |     |  X  |     |
+-------------------------
+```
+One way to solve the problem is to place a queen on each row. When we have place k - 1 queens, one must place the kth queen in a column where it’s not “in check” with any other queen on the board. Eg. 0th queen doesn't matter. So if the first quen is placed as above in the (1,2) the 2nd goes in (2, 4), and so on.
+
+### Algorithm
+
+We can solve this problem with a recursive algorithm:
+* Suppose that we have already generated all the solutions consisting of placing `k-1` queens on a board of size `n`.
+* Each solution is represented by a list (of length `k-1`) containing the numbers of columns (between `0` and `n-1`).
+* The column number of the queen in the k-1th row comes first in the list, followed by the column number of the queen in row k-2, etc.
+* The solution set is thus represented as a set of lists, with one element for each solution.
+* Now, to place the kth queen, we generate all possible extensions of each solution preceded by a new queen:
 
