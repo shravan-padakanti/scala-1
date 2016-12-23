@@ -53,4 +53,44 @@ def isPrime(n: Int) = (2 until n) forall (n % _ != 0)
 
 ## For-Expressions
 
+Higher-order functions such as `map`, `flatMap` or filter provide powerful constructs for manipulating lists.
+But sometimes the level of abstraction required by these function make the program difficult to understand.
+In this case, Scala’s `for expression` notation can help.
 
+Let persons be a list of elements of class Person, with fields name and age.
+```scala
+case class Person(name: String, age: Int)
+```
+To obtain the names of persons over 20 years old, you can write:
+```scala
+for ( p <- persons if p.age > 20 ) yield p.name
+```
+which is equivalent to:
+```scala
+persons filter (p => p.age > 20) map (p => p.name)
+```
+**The for-expression is similar to loops in imperative languages, except that it builds a list of the results of all iterations**.
+
+### Syntax
+
+A for-expression is of the form
+```scala
+for ( s ) yield e
+```
+where `s` is a _sequence_ of **generators** and **filters**, and `e` is an expression whose value is returned by an iteration.
+* A **generator** is of the form `p <- e`, where `p` is a pattern and `e` an expression whose value is a collection.
+* A **filter** is of the form `if f` where `f` is a boolean expression.
+* The sequence must start with a generator.
+* If there are several generators in the sequence, the last generators vary faster than the first.
+
+Instead of `( s )`, braces `{ s }` can also be used, and then the sequence of generators and filters can be written on multiple lines without requiring semicolons.
+
+### Example:
+The above example can be implemented as:
+```scala
+for {
+    i <- 1 until n
+    j <- 1 until i
+    if isPrime(i + j)
+} yield (i, j)
+```
