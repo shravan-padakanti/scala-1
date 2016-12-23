@@ -72,6 +72,7 @@ which is equivalent to:
 ```scala
 persons filter (p => p.age > 20) map (p => p.name)
 ```
+> You can read the `<-` as _coming from_. Eg `p <- persons` would mean p is all the person objects coming from the persons collection.
 **The for-expression is similar to loops in imperative languages, except that it builds a list of the results of all iterations**.
 
 ### Syntax
