@@ -52,7 +52,7 @@ One way to solve the problem is to place a queen on each row. When we have place
 We can solve this problem with a recursive algorithm:
 * Suppose that we have already generated all the solutions consisting of placing `k-1` queens on a board of size `n`.
 * Each solution is represented by a list (of length `k-1`) containing the numbers of columns (between `0` and `n-1`).
-* The column number of the queen in the k-1th row comes first in the list, followed by the column number of the queen in row k-2, etc.
+* The column number of the queen in the `k-1`the row comes first in the list, followed by the column number of the queen in row `k-2`, etc.
 * The solution set is thus represented as a set of lists, with one element for each solution.
-* Now, to place the kth queen, we generate all possible extensions of each solution preceded by a new queen:
+* Now, to place the `k`th queen, we generate all possible extensions of each solution preceded by a new queen:
 
