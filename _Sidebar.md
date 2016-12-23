@@ -37,7 +37,7 @@
 **Week 6**
 
 * [Other Colellections](https://github.com/rohitvg/scala-principles-1/wiki/Other-Collections)
-* [Combinatorial Search and For Expressions]()
+* [Combinatorial Search and For-Expressions](https://github.com/rohitvg/scala-principles-1/wiki/Combinatorial-Search-and-For-Expressions)
 * [Combinatorial Search Example]()
 * [Collections (Maps)]()
 * [Conclusion]()
