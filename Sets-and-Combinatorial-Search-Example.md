@@ -35,17 +35,18 @@ The eight queens problem is to place eight queens on a chessboard so that no que
 We now develop a solution for a chessboard of any size, not just 8. <br/>
 Eg. 
 ```
--------------------------
-|     |  X  |     |     |
--------------------------
-|     |     |     |  x  |
--------------------------
-|  x  |     |     |     |
--------------------------
-|     |     |  X  |     |
--------------------------
+      0      1     2     3
+   -------------------------
+0  |     |  X  |     |     |
+   -------------------------
+1  |     |     |     |  x  |
+   -------------------------
+2  |  x  |     |     |     |
+   -------------------------
+3  |     |     |  X  |     |
+   -------------------------
 ```
-One way to solve the problem is to place a queen on each row. When we have place k - 1 queens, one must place the kth queen in a column where it’s not “in check” with any other queen on the board. Eg. 0th queen doesn't matter. So if the first quen is placed as above in the (1,2) the 2nd goes in (2, 4), and so on.
+One way to solve the problem is to place a queen on each row. When we have placed k - 1 queens, one must place the kth queen in a column where it’s not “in check” with any other queen on the board. Eg. 0th queen doesn't matter. So if the first quen is placed as above in the (0,1) the 2nd goes in (1, 3), and so on.
 
 ### Algorithm
 
@@ -56,3 +57,36 @@ We can solve this problem with a recursive algorithm:
 * The solution set is thus represented as a set of lists, with one element for each solution.
 * Now, to place the `k`th queen, we generate all possible extensions of each solution preceded by a new queen:
 
+```
+      0      1     2     3
+   -------------------------
+0  |     |  X  |     |     |
+   -------------------------
+1  |     |     |     |  x  |
+   -------------------------
+2  |  x  |     |     |     |
+   -------------------------
+3  |     |     |  X  |     |
+   -------------------------
+```
+So using he algorithm above, the solution using the first 3 queens would be `list(0, 3, 1)`because we placed:
+1. 3rd queen in (2, 0)
+1. 2nd in (1, 3)
+1. 1st in (0,1)
+So placing the 4th queen, our solution will be `list(1, 0, 3, 1)`
+
+### Implementation:
+```scala
+def queens(n: Int) = {
+def placeQueens(k: Int): Set[List[Int]] = {
+  if (k == 0) Set(List())
+  else
+  for {
+    queens <- placeQueens(k - 1)
+    col <- 0 until n
+    if isSafe(col, queens)
+    } yield col :: queens
+  }
+  placeQueens(n)
+}
+```
