@@ -91,9 +91,9 @@ class PolyNom(val terms: Map[Int, Double]) {
             case None => exp -> coeff
         }
     }
-    override def toString() {
+    override def toString() = {
          // (for( (exp, coeff) <- terms ) yield exp + "X^" + coeff) mkString "+"  // This prints fine, but in random order.
-        (for( ((exp, coeff) <- terms).toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
+        (for( (exp, coeff) <- terms.toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
     }
 }
 ```
@@ -118,9 +118,9 @@ class PolyNom(terms0: Map[Int, Double]) {
         // pattern match is now not needed now we don't need to test whether the given terms contain the given exponent or not
         exp -> (coeff + terms(exp))
     }
-    override def toString() {
+    override def toString() = {
          // (for( (exp, coeff) <- terms ) yield exp + "X^" + coeff) mkString "+"  // This prints fine, but in random order.
-        (for( ((exp, coeff) <- terms).toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
+        (for( (exp, coeff) <- terms.toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
     }
 }
 ```
