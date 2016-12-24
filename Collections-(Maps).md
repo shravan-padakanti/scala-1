@@ -5,7 +5,7 @@ A map of type `Map[Key, Value]` is a data structure that associates keys of type
 
 ```scala
 val romanNumerals = Map("I" -> 1, "V" -> 5, "X" -> 10)                       // Map of type [String, Int]
-val campitalOfCountry = Map("US" -> "Washington", "Switzerland" -> "Bern")   // Map of type [String, String]
+val capitalOfCountry = Map("US" -> "Washington", "Switzerland" -> "Bern")   // Map of type [String, String]
 ```
 
 ### Maps = Iterables + Functions
