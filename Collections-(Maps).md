@@ -10,13 +10,13 @@ val capitalOfCountry = Map("US" -> "Washington", "Switzerland" -> "Bern")   // M
 
 ### Maps = Iterables + Functions
 
-Class `Map[Key, Value]` extends the collection type `Iterable[(Key, Value)]` Therefore, maps support the same collection operations as other iterables:
+Class `Map[Key, Value]` extends the collection type `Iterable[(Key, Value)]` Therefore, maps support the same collection operations as other iterables.
 ```scala
 val countryOfCapital = capitalOfCountry map {
     case(x,y) => (y, x)
 }
 ```
-Note that maps extend iterables of key/value **pairs**. Infact, the syntax `key -> value` is just an alternative way to write the pair `(key, value)`
+Note that maps extend iterables of key/value **pairs**. Infact, the syntax `key -> value` is just an alternative way to write the pair `(key, value)`. Thus as seen above we can use pattern patching with pairs to get the values.
 
 Class `Map[Key, Value]` extends the function type `Key => Value`, **so maps can be used everywhere functions can**. In particular, maps can be applied to key arguments. Eg.
 ```scala
