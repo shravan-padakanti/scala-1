@@ -3,6 +3,7 @@
 A **pair** in scala is written `(x,y)`, where `x` and `y` are the elements of the pair.
 ```scala
 val pair = ("answer", 42)
+val pair2 = ("answer" -> 43)
 ```
 The type of the above pair is `(String, Int)`
 
