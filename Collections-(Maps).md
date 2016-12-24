@@ -77,10 +77,25 @@ fruit groupBy (_.head)  // Map(p -> List(pear, pineapple), a -> List(apple), o -
 ```
 As we know `head` is the first character that appears in each string. So `groupBy` gives us a `map` that maps head with a list of all fruits with that head.
 
-###Map Example
-A polynomial can be seen as a map from exponents to coefficients. For instance, `x^3 - 2x + 5` can be represented as `Map(0 -> 5, 1 -> -2, 3 -> 1)`
+### Map Example
+A polynomial can be seen as a map from exponents to coefficients. For instance, `x^3 - 2x + 5` can be represented as `Map(0 -> 5, 1 -> -2, 3 -> 1)`.
 
 Based on this observation, a class `Polynom` that represents polynomials as maps can be designed. 
+```scala
+class PolyNom(val terms: Map[Int, Double]) {
+    def + (other: PolyNom) = PolyNom(terms ++ other.terms maps adjust) // maps concatenated using ++ and wrapped as PolyNom. Then maps.adjust is called as the previous part only concatenates, does not add values with same coeffecients.
+    def adjust(term: (Int, Double)): (Int, Double) = {
+        val (exp, coeff) = term
+        terms get exp match {
+            case Some(coeff1) => exp -> coeff + coeff1
+            case None => exp -> coeff
+        }
+    }
+    override def toString() {
+         // (for( (exp, coeff) <- terms ) yield exp + "X^" + coeff) mkString "+"  // This prints fine, but in random order.
+        (for( ((exp, coeff) <- terms).toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
+    }
+}
 
 ###Default Values
 So far, maps were _partial functions_: applying a map to a key value in `map(key)` could lead to an exception, if the key was not stored in the map. What if we could make maps total functions, that would never fail but that would give back a default value if some key wasn't found?
