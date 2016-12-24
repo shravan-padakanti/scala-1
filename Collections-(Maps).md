@@ -96,13 +96,30 @@ class PolyNom(val terms: Map[Int, Double]) {
         (for( ((exp, coeff) <- terms).toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
     }
 }
+```
 
-###Default Values
-So far, maps were _partial functions_: applying a map to a key value in `map(key)` could lead to an exception, if the key was not stored in the map. What if we could make maps total functions, that would never fail but that would give back a default value if some key wasn't found?
+### Default Values
+So far, maps were **partial functions**: applying a map to a key value in `map(key)` could lead to an exception if the key was not stored in the map. What if we could make maps **total functions**, that would never fail but that would give back a default value if some key wasn't found?
 
-There's an operation for that! `withDefaultValue` turns a map into a total function:
+The operation `withDefaultValue` turns a map into a total function:
 
 ```scala
 val cap1 = capitalOfCountry withDefaultValue "<unknown>"
-cap1("andorra")
+cap1("andorra")                  // returns: "unknown"
 ```
+
+Hence we can change the above implementation of PolyNom as below:
+```scala
+class PolyNom(val terms: Map[Int, Double]) {
+    val terms = terms0 withDefaultValue 0.0           // <-- withDefaultValue
+    def + (other: PolyNom) = PolyNom(terms ++ other.terms maps adjust) // maps concatenated using ++ and wrapped as PolyNom. Then maps.adjust is called as the previous part only concatenates, does not add values with same coeffecients.
+    def adjust(term: (Int, Double)): (Int, Double) = {
+        val (exp, coeff) = term
+        // pattern match is now not needed now we don't need to test whether the given terms contain the given exponent or not
+        exp -> (coeff + terms(exp))
+    }
+    override def toString() {
+         // (for( (exp, coeff) <- terms ) yield exp + "X^" + coeff) mkString "+"  // This prints fine, but in random order.
+        (for( ((exp, coeff) <- terms).toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
+    }
+}
