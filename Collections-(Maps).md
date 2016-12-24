@@ -123,3 +123,8 @@ class PolyNom(val terms: Map[Int, Double]) {
         (for( ((exp, coeff) <- terms).toList.sorted.reverse ) yield exp + "X^" + coeff) mkString "+"
     }
 }
+```
+Here, to allow the user to enter the polynomial in a simpler fashion, we can define auxilliary constructor:
+```scala
+def this(args: (Int, Double)*) = this(args.map)
+```
