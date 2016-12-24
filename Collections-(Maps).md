@@ -83,7 +83,7 @@ A polynomial can be seen as a map from exponents to coefficients. For instance, 
 Based on this observation, a class `Polynom` that represents polynomials as maps can be designed. 
 ```scala
 class PolyNom(val terms: Map[Int, Double]) {
-    def + (other: PolyNom) = PolyNom(terms ++ other.terms maps adjust) // maps concatenated using ++ and wrapped as PolyNom. Then maps.adjust is called as the previous part only concatenates, does not add values with same coeffecients.
+    def + (other: PolyNom) = PolyNom(terms ++ (other.terms map adjust)) // maps concatenated using ++ and wrapped as PolyNom. Then maps.adjust is called as the previous part only concatenates, does not add values with same coeffecients.
     def adjust(term: (Int, Double)): (Int, Double) = {
         val (exp, coeff) = term
         terms get exp match {
@@ -112,7 +112,7 @@ Hence we can change the above implementation of PolyNom as below:
 ```scala
 class PolyNom(terms0: Map[Int, Double]) {
     val terms = terms0 withDefaultValue 0.0           // field = param withDefaultValue 0.0
-    def + (other: PolyNom) = PolyNom(terms ++ other.terms maps adjust) // maps concatenated using ++ and wrapped as PolyNom. Then maps.adjust is called as the previous part only concatenates, does not add values with same coeffecients.
+    def + (other: PolyNom) = new PolyNom(terms ++ other.terms maps adjust) // maps concatenated using ++ and wrapped as PolyNom. Then maps.adjust is called as the previous part only concatenates, does not add values with same coeffecients.
     def adjust(term: (Int, Double)): (Int, Double) = {
         val (exp, coeff) = term
         // pattern match is now not needed now we don't need to test whether the given terms contain the given exponent or not
