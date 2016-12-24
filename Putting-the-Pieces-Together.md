@@ -42,7 +42,7 @@ object Phone {
 
   // Map from digit string to respective possible words
   def numToWord: Map[String, Seq[String]] = {
-    words.groupBy(wordCode) withDefaultValue (Seq())
+    words.groupBy(wordCode) withDefaultValue (Seq()) // withDefaultValue (Seq()) is used so that if user tries to encode digits the words for which are not contained in our list, we do not get an exception.
   }
 
   // Function to encode a number as a list of all possible words
@@ -60,8 +60,7 @@ object Phone {
   }
 
   // Test!
-  //encode("225247386")
-  encode("72")
+  encode("7225247386")
 
 }
 ```
