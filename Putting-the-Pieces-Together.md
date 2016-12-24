@@ -4,9 +4,8 @@ Here we will see a larger example where we use the concepts we have learned so f
 
 Phone keys have mnemonics assigned to them.
 ```scala
-val mnemonics = Map(
-’2’ -> ”ABC”, ’3’ -> ”DEF”, ’4’ -> ”GHI”, ’5’ -> ”JKL”,
-’6’ -> ”MNO”, ’7’ -> ”PQRS”, ’8’ -> ”TUV”, ’9’ -> ”WXYZ”)
+val mnemonics = Map( '2' -> "ABC", '3' -> "DEF", '4' -> "GHI", '5' -> "JKL", 
+                     '6' -> "MNO", '7' -> "PQRS", '8' -> "TUV", '9' -> "WXYZ")
 ```
 Assume you are given a dictionary words as a list of words. Design a method:
 ```scala
