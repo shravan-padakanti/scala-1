@@ -36,7 +36,7 @@
 
 **Week 6**
 
-* [Other Colellections](https://github.com/rohitvg/scala-principles-1/wiki/Other-Collections)
+* [Other Collections (Vectors and Ranges)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Vectors-and-Ranges))
 * [Combinatorial Search and For-Expressions](https://github.com/rohitvg/scala-principles-1/wiki/Combinatorial-Search-and-For-Expressions)
 * [Sets and Combinatorial Search Example](https://github.com/rohitvg/scala-principles-1/wiki/Sets-and-Combinatorial-Search-Example)
 * [Collections (Maps)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Maps))
