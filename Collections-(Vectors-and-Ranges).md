@@ -51,7 +51,7 @@ val s: Range = 1 to 5      // 1, 2, 3, 4, 5
 ```
 Ranges a represented as single objects with three fields: lower bound, upper bound, step value.
 
-## Some more Sequence oeprations:
+## Some more Sequence operations:
 ```scala
 xs exists p  // true if there is an element x of xs such that p(x) holds, false otherwise.
 xs forall p  // true if p(x) holds for all elements x of xs, false otherwise.
