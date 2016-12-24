@@ -73,11 +73,9 @@ fruit.sorted //List("apple", "orange", 'pear", "pineapple")
 `groupBy` partitions a collection into a `map` of collections according to a _discriminator function_. 
 
 ```scala
-fruit groupBy (_.head)  //|> Map(p -> List(pear, pineapple),
-                        //       a -> List(apple))
+fruit groupBy (_.head)  // Map(p -> List(pear, pineapple), a -> List(apple), o -> List(orange))
 ```
-
-`head` here is the first character that appears in each string - so what that gives us is a `map` that associates each head character with a list of all the fruit that have that character as the head. 
+As we know `head` is the first character that appears in each string. So `groupBy` gives us a `map` that maps head with a list of all fruits with that head.
 
 ###Map Example
 A polynomial can be seen as a map from exponents to coefficients. For instance, `x^3 - 2x + 5` can be represented as `Map(0 -> 5, 1 -> -2, 3 -> 1)`
