@@ -80,7 +80,7 @@ As we know `head` is the first character that appears in each string. So `groupB
 ###Map Example
 A polynomial can be seen as a map from exponents to coefficients. For instance, `x^3 - 2x + 5` can be represented as `Map(0 -> 5, 1 -> -2, 3 -> 1)`
 
-Based on this observation, let's design a class `Polynom` that represents polynomials as maps!
+Based on this observation, a class `Polynom` that represents polynomials as maps can be designed. 
 
 ###Default Values
 So far, maps were _partial functions_: applying a map to a key value in `map(key)` could lead to an exception, if the key was not stored in the map. What if we could make maps total functions, that would never fail but that would give back a default value if some key wasn't found?
