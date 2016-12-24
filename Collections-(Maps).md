@@ -37,8 +37,6 @@ captalOfCountry get ("Andorra")  // returns: Option[java.lang.String] = None
 captalOfCountry get ("US")       // returns: Option[java.lang.String] = Some(Washington)
 ```
 
-If we were to go `capitalOfCountry.get "US"`, we'd get an option valut that read `Some(Washington)`. 
-
 ### The Option Type
 ```scala
 trait Option[+A]
@@ -49,19 +47,18 @@ An `Option` value can be one of two things, so the expression `map get key` eith
 * `None`    : if `map` does not contain the given key
 * `Some(x)` : if `map` associates the given `key` with the value x.
 
-###Decomposing Option
-Since options are defined as case classes, they can be decomposed using pattern matching:
+### Decomposing Option
 
+Since options are defined as case classes, they can be decomposed using pattern matching:
 ```scala
 def showCapital(country: String) = capitalOfCountry.get(country) match {
     case Some(capital) => capital
     case None => "missing data"
 }
 ```
+Options also support quite a few operations of the other collections. In particular, they support `map`, `flatMap`, and `filter`, so we can use them with `for-expressions`.
 
-Options also support quite a few operations of the other collections. In particular, they support `map`, `flatMap`, and `filter`, so we can use them with for-expressions
-
-###Sorted and GroupBy
+### Sorted and GroupBy
 
 Two useful operations of SQL queries in addition to for-expressions are `groupBy` and `orderBy`
 
