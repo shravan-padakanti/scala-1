@@ -40,5 +40,5 @@
 * [Combinatorial Search and For-Expressions](https://github.com/rohitvg/scala-principles-1/wiki/Combinatorial-Search-and-For-Expressions)
 * [Sets and Combinatorial Search Example](https://github.com/rohitvg/scala-principles-1/wiki/Sets-and-Combinatorial-Search-Example)
 * [Collections (Maps)](https://github.com/rohitvg/scala-principles-1/wiki/Collections-(Maps))
-* [Putting the blocks together]()
+* [Putting the blocks together](https://github.com/rohitvg/scala-principles-1/wiki/Putting-the-Pieces-Together)
 * [Conclusion]()
