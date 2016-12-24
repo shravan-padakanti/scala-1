@@ -126,9 +126,11 @@ class PolyNom(terms0: Map[Int, Double]) {
 ```
 Here, to allow the user to enter the polynomial in a simpler fashion, we can define auxilliary constructor:
 ```scala
-def this(args: (Int, Double)*) = this(args.map) // * indicates repeated parameters
+def this(args: (Int, Double)*) = this(args.toMap) // * indicates repeated parameters
 ```
 This can be used as:
 ```
-val p1 = new PolyNom(Map(0 -> 5, 1 -> -2, 3 -> 1)) // original constructor
+val p1 = new PolyNom(Map(0 -> 5, 1 -> -2, 3 -> 1)) // old constructor
 val p1 = new PolyNom(0 -> 5, 1 -> -2, 3 -> 1) // auxiliary constructor
+val p1 = new PolyNom((0,5), (1,-2), (3,1))    // auxiliary constructor
+```
