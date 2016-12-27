@@ -92,7 +92,11 @@ xs.foldLeft(ys){(aggregator, element) => element :: aggregator}
 
 Usage:
 ```scala
-val t = List(2, 3, 4, 5)                             //> t  : List[Int] = List(2, 3, 4, 5)
-val tr = t.foldRight(0) { (n: Int, acc: Int) => n }  //> tr  : Int = 2
-val tl = t.foldLeft(0) { (acc: Int, n: Int) => n }   //> tl  : Int = 5
+val t = List(2, 3, 4, 5)                                   //> t  : List[Int] = List(2, 3, 4, 5)
+// Note how foldLeft starts from left and foldRight from right
+val tl = t.foldLeft(0) { (acc: Int, n: Int) => n }         //> tl  : Int = 5
+val tr = t.foldRight(0) { (n: Int, acc: Int) => n }        //> tr  : Int = 2
+// After folding left or right, end result of a sum operation is same
+val tl = t.foldLeft(0) { (acc: Int, n: Int) => n + acc }   //> tl  : Int = 14
+val tr = t.foldRight(0) { (n: Int, acc: Int) => n + acc}   //> tr  : Int = 14
 ```
