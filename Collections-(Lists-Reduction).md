@@ -89,3 +89,10 @@ Here, it isn't possible to replace `foldRight` by `foldLeft`. why? The types don
 xs.foldRight(ys){(element, aggregator) => element :: aggregator}
 xs.foldLeft(ys){(aggregator, element) => element :: aggregator}
 ```
+
+Usage:
+```scala
+val t = List(2, 3, 4, 5)                             //> t  : List[Int] = List(2, 3, 4, 5)
+val tr = t.foldRight(0) { (n: Int, acc: Int) => n }  //> tr  : Int = 2
+val tl = t.foldLeft(0) { (acc: Int, n: Int) => n }   //> tl  : Int = 5
+```
