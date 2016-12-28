@@ -98,3 +98,13 @@ for {
     if isPrime(i + j)     // filter
 } yield (i, j)
 ```
+This for-loop is equivalent to:
+```scala
+for (i <- 1 until n) {
+    for (j <- 1 until i) {
+        if(isPrime(i + j)) {
+            yield (i, j)  
+        }
+    }
+}
+```
