@@ -157,3 +157,11 @@ class Nil extends List[Nothing] { //Nothing type is at the bottom of Scala’s t
 val v : List[String] = Nil
 ```
 
+### Bottomline
+
+`Q[A <: B]` means that class Q can take any class A that is a subclass of B.
+
+`Q[+B]` means that `Q` can take any class, but if `A` is a subclass of `B`, then `Q[A]` is considered to be a subclass of `Q[B]`.
+
+`Q[-B]` means that `Q` can take any class, but if `A` is a subclass of `B`, then `Q[B]` is considered to be a subclass of `Q[A]`.
+
