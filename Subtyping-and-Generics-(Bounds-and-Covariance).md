@@ -94,7 +94,8 @@ Lists are immutable and Arrays are mutable. So types which are mutable should no
 Say C[T] is a parameterized type, and A, B are types such that `A <: B`.
 
 There are 3 possible relationships between C[A] and C[B]:
-```
+```scala
+// B is the superclass
 C[A] <: C[B]                                    // C is covariant
 C[A] >: C[B]                                    // C is contravariant
 neither C[A] or C[B] is a subtype of the other  // C is nonvariant
