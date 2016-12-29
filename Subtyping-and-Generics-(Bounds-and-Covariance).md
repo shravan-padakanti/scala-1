@@ -159,6 +159,8 @@ val v : List[String] = Nil
 
 ### Bottomline
 
+Reference: http://stackoverflow.com/questions/4531455/whats-the-difference-between-ab-and-b-in-scala
+
 `Q[A <: B]` means that class Q can take any class A that is a subclass of B.
 
 `Q[+B]` means that `Q` can take any class, but if `A` is a subclass of `B`, then `Q[A]` is considered to be a subclass of `Q[B]`.
