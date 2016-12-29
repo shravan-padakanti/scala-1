@@ -157,7 +157,7 @@ class Nil extends List[Nothing] { //Nothing type is at the bottom of Scala’s t
 val v : List[String] = Nil
 ```
 
-### Bottomline
+# Understanding above
 
 Reference: http://stackoverflow.com/questions/4531455/whats-the-difference-between-ab-and-b-in-scala
 
@@ -214,3 +214,32 @@ func2(animalsList)  // GOOD - Contravariance
 func2(dogsList)     // GOOD
 ```
 
+### Another example
+
+This shows that functions are _contravariant_ in argument types and _covariant_ in return types.
+
+```scala
+package com.example.playground
+
+class Car {}
+class SportsCar extends Car {}
+class Ferrari extends SportsCar {}
+
+object morecovariance extends App {
+
+    // Test 1: Works as expected
+
+    def test1( arg: SportsCar => SportsCar ) = {
+        new SportsCar
+    }
+
+    def foo1(arg: Car): Ferrari = { new Ferrari }
+    def foo2(arg: SportsCar): Car = { new Ferrari }
+    def foo3(arg: Ferrari): Ferrari = { new Ferrari }
+
+    test1(foo1) // compiles
+    test1(foo2) // Fails due to wrong return type. 
+    test1(foo3) // Fails due to wrong parameter type
+
+}
+```
