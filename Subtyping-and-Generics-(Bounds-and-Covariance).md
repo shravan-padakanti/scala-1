@@ -167,3 +167,50 @@ Reference: http://stackoverflow.com/questions/4531455/whats-the-difference-betwe
 
 `Q[-B]` means that `Q` can take any class, but if `A` is a subclass of `B`, then `Q[B]` is considered to be a subclass of `Q[A]`.
 
+### Working example:
+
+```scala
+class Animal {}
+class Dog extends Animal {}
+class Poodle extends Dog {}
+
+val animalsList: MYList[Animal] = new MYList(animal, dog) //polymorphism (parent class reference is used to refer to a child class object.)
+val dogsList: MYList[Dog] = new MYList(dog)
+```
+1) Here `MYList` is nonvariant.
+```scala
+class MYList[T](elements: T*) {} 
+
+def func1(list: MYList[Animal]) = {}
+def func2(list: MYList[Dog]) = {}
+
+func1(animalsList)  // GOOD
+func1(dogsList)     // FAILS
+func2(animalsList)  // FAILS
+func2(dogsList)     // GOOD
+```
+2) Here `MYList` is covariant.
+```scala
+class MYList[+T](elements: T*) {} 
+
+def func1(list: MYList[Animal]) = {}
+def func2(list: MYList[Dog]) = {}
+
+func1(animalsList)  // GOOD
+func1(dogsList)     // GOOD - covariance
+func2(animalsList)  // FAILS
+func2(dogsList)     // GOOD
+```
+3) Here `MYList` is contra-variant.
+```scala
+class MYList[+T](elements: T*) {} 
+
+def func1(list: MYList[Animal]) = {}
+def func2(list: MYList[Dog]) = {}
+
+func1(animalsList)  // GOOD
+func1(dogsList)     // FAILS
+func2(animalsList)  // GOOD - Contravariance
+func2(dogsList)     // GOOD
+```
+
