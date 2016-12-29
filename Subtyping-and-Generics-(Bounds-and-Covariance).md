@@ -14,8 +14,8 @@ We have the class hierarchy `Any` > `AnyRef` > `IntSet` > `Empty` and `NonEmpty`
 
 Consider the method `assertAllPositives` which
 
-* takes an IntSet
-* returns the IntSet itself if all its elements are positive
+* takes an `IntSet`
+* returns the `IntSet` itself if all its elements are positive
 * throws an exception otherwise
 
 What would be the best type you can give to assertAllPos? Maybe:
