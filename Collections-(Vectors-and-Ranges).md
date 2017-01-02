@@ -22,6 +22,8 @@ A Vector is a data structure, which is an array for upto 32 elements. For more e
 
 > When batch operations are recursive on the head, lists are preferred as they have constant time access. If batch operations are bulk on the rest of the list, vectors are preferred.
 
+> `Sequences` are either **Indexed** (`list`) or **Linear** (`Vector`, `Array`, `String`). Also `Array` and `String` are from Java, hence shown dotted.
+
 Vectors can be created as below:
 ```scala
 val nums = Vector(1, 2, 3, -88)
