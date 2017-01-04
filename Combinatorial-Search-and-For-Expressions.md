@@ -8,7 +8,7 @@ j     |  1  2  1  3  2  1  5
 ------------------------------
 i + j |  3  5  5  7  7  7  11
 ```
-In a conventional way, we would use 2 for loops which are nested, 1 for i and 1 for j. How would you do this in functional programming?
+In a conventional way, we would use 2 for loops which are nested, one for i and one for j. How would you do this in functional programming?
 
 ### Algorithm:
 
