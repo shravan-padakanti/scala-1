@@ -1,7 +1,7 @@
 Here we will see how to handle nested-sequences.
 
 The calculations which are usually expressed in loops can be expressed using higher order functions in sequences.<br/>
-Eg. Given a positive integer n, find all pairs of positive integers i and j, such that 1 <= j < i < n and (i+j) is prime. So if n = 7, we would get the below pairs:
+Eg. Given a positive integer `n`, find all pairs of positive integers `(i, j)`, such that `1 <= j < i < n` and `(i+j)` is prime. So if n = 7, we would get the below pairs:
 ```
 i     |  2  3  4  4  5  6  6
 j     |  1  2  1  3  2  1  5
