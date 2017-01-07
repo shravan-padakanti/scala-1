@@ -28,3 +28,8 @@ def c1 = new Car
 def c2 = new Car
 println(Car.someString)
 ```
+
+### Classname Convention
+Java requires classname and filename to be the same.
+
+Scala does not have this requirement. Only requirement is a class and its companion object be defined in the same file.
