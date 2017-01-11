@@ -1,4 +1,6 @@
-**Reference:** https://www.youtube.com/watch?v=LH75sJAR0hc
+#### Reference:
+* [Why Scala](https://www.youtube.com/watch?v=LH75sJAR0hc)
+* [Scala for the intrigued](https://www.youtube.com/watch?v=grvvKURwGNg&t=220s)
 
 ### Object Orientation
 
