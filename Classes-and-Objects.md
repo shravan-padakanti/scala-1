@@ -25,6 +25,15 @@ class Foo(var numer: Int, val denom: Int) {
 ```
 Here `numer` is a variable and `denom` is a constant. No getters/setters needed. These implicit variables can also have access specifiers eg. `private`.
 
+**Note**: In case of functions, parameters are assumed to be `val`.Eg.
+```scala
+def foo(x: Int) = {}
+```
+is the same as 
+```scala
+def foo(val x: Int) = {}
+```
+
 # Objects
 
 Objects are elements of a class type, created by using the `new` keyword.
