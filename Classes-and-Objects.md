@@ -10,6 +10,7 @@ class Foo(x: Int, y: Int) {
 }
 ```
 This definition has 2 entities: 
+
 1. A "type" named Foo
 2. A Constructor to create elements of this type.
 
