@@ -15,6 +15,15 @@ This definition has 2 entities:
 
 Scala keeps types and values in different namespaces, so there is no conflict between the definitions of Foo.
 
+### Implicit class variables
+In the above examples, instead of taking constructor params, and assigning them to class variables/constants, we can do the below directly:
+```scala
+class Foo(var numer: Int, val denom: Int) {
+
+}
+```
+Here `numer` is a variable and `denom` is a constant. No getters/setters needed.
+
 # Objects
 
 Objects are elements of a class type, created by using the `new` keyword.
@@ -97,14 +106,5 @@ class Foo(x: Int, y: Int) {
    }
 }
 ```
-
-### Implicit class variables
-In the above examples, instead of taking constructor params, and assigning them to class variables/constants, we can do the below directly:
-```scala
-class Foo(var numer: Int, val denom: Int) {
-
-}
-```
-Here `numer` is a variable and `denom` is a constant. No getters/setters needed.
 
 
