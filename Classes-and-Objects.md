@@ -75,7 +75,7 @@ assert(x >= 0)
 
 // Fails with AssertionError instead of IllegalArgumentException
 ```
-The difference between `require` and `assert` is the _intent_ of use.
+The difference between `require` and `assert` is the _"intent"_ of use.
 * require is used to enforce a precondition on the caller of a function
 * assert is used to check the code of a function
 
@@ -98,5 +98,13 @@ class Foo(x: Int, y: Int) {
 }
 ```
 
+### Implicit class variables
+In the above examples, instead of taking constructor params, and assigning them to class variables/constants, we can do the below directly:
+```scala
+class Foo(var numer: Int, val denom: Int) {
+
+}
+```
+Here `numer` is a variable and `denom` is a constant. No getters/setters needed.
 
 
