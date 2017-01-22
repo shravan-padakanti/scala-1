@@ -19,11 +19,20 @@ Scala keeps types and values in different namespaces, so there is no conflict be
 ### Implicit class variables
 In the above examples, instead of taking constructor params and assigning them to class variables/constants, we can directly generate implicit class variables/constants in the constructor:
 ```scala
-class Foo(var numer: Int, val denom: Int) {
+class Foo2(var numer: Int, val denom: Int) {
 
 }
 ```
 Here `numer` is a variable and `denom` is a constant. No getters/setters needed. These implicit variables can also have access specifiers eg. `private`.
+
+So here, you **cannot** do:
+```scala
+println(Foo.x) // since its just a parameter and not a class variables
+```
+but we **can** do this:
+```scala
+println(Foo2.numer)
+```
 
 **Note**: As seen above, in case of classes, using a keyword like `var` or `val` before the param name makes it a class variable. Leaving out the keyword makes it a parameter. However, in case of **functions**, parameters are assumed to be `val`.Eg.
 ```scala
