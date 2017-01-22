@@ -25,7 +25,7 @@ class Foo(var numer: Int, val denom: Int) {
 ```
 Here `numer` is a variable and `denom` is a constant. No getters/setters needed. These implicit variables can also have access specifiers eg. `private`.
 
-**Note**: In case of functions, parameters are assumed to be `val`.Eg.
+**Note**: As seen above, in case of classes, using a keyword like `var` or `val` before the param name makes it a class variable. Leaving out the keyword makes it a parameter. However, in case of **functions**, parameters are assumed to be `val`.Eg.
 ```scala
 def foo(x: Int) = {}
 ```
