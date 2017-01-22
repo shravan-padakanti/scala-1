@@ -19,11 +19,11 @@ Scala keeps types and values in different namespaces, so there is no conflict be
 ### Implicit class variables
 In the above examples, instead of taking constructor params and assigning them to class variables/constants, we can directly generate implicit class variables/constants in the constructor:
 ```scala
-class Foo(var numer: Int, private val denom: Int) {
+class Foo(var numer: Int, val denom: Int) {
 
 }
 ```
-Here `numer` is a variable and `denom` is a constant. No getters/setters needed.
+Here `numer` is a variable and `denom` is a constant. No getters/setters needed. These implicit variables can also have access specifiers eg. `private`.
 
 # Objects
 
