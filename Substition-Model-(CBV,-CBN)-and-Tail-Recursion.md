@@ -1,3 +1,6 @@
+Some reading on CBN, CBV: 
+http://stackoverflow.com/questions/13337338/call-by-name-vs-call-by-value-in-scala-clarification-needed
+
 ### Substitution Model: 
 An expression is evaluated i.e. is reduced to a value using substitution. Evaluation of expression takes place from left to right.
 ```Scala
@@ -193,3 +196,4 @@ Note that Scala does not consider a method to be tail-recursive if it can be ove
   // calculates factorial of 999 in 49573ns
   }
 ```
+
