@@ -1,9 +1,9 @@
 > ### Brief explanation:
 > 
 >
-> * **Call-by-value:** `val x = ...` The expression is evaluated once when it is declared irresepctive of if its referenced or not. If it is then that evaluated "value" is used thereafter whenever that expression is referenced.
-> * **Lazy-evaluation:** `lazy val x = ...` The expression is evaluated only when its referenced for the first time. For all later times that x is referenced, the same value is used.
-> * **Call-by-name:** ``def foo = ...`` The expression is evaluated every time it is referenced.
+> * **Call-by-value:** The expression is evaluated once when it is declared irresepctive of if its referenced or not. If it is then that evaluated "value" is used thereafter whenever that expression is referenced.
+> * **Lazy-evaluation:** The expression is evaluated only when its referenced for the first time. For all later times that x is referenced, the same value is used.
+> * **Call-by-name:** The expression is evaluated every time it is referenced.
 >
 > Some reading on CBN, CBV: http://stackoverflow.com/questions/13337338/call-by-name-vs-call-by-value-in-scala-clarification-needed
 
