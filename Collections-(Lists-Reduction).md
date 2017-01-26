@@ -46,7 +46,7 @@ The function `reduceLeft` is defined in terms of a more general function, `foldL
 
 Basically `foldLeft` folds from left. It takes in 2 arguments, and accumulator and a function. The accumulator and the first element in the list is passed to the function, and the result becomes the new accumulator which is now passed in with the second element in the list to the function, and so on until the list is completely folded.
 ```scala
-List(1,3,8).foldLeft(100)((s,x) => s - x) == ((100 - 1) - 3) - 8 == 88 // folds from left
+List(1,3,8).foldLeft(100)((acc, elem) => acc - elem) == ((100 - 1) - 3) - 8 == 88 // folds from left
 ```
 
 So,
@@ -76,11 +76,15 @@ abstract class List[T] { ...
 
 Applications of `foldLeft` and `reduceLeft` unfold on trees that lean to the left. So trees which lean to right, can use similar `foldRight` and `reduceRight`.
 
-i.e. `foldRight` and `reduceRight` do the same thing as `foldLeft` and `reduceLeft` resp., except starting from right instead of left.
-
 ```scala
 List(x1, ..., xn)  reduceRight op   = x1 op ( ... (x(n-1) op xn) ... )
 (List(x1, ..., xn) foldRight z)(op) = x1 op ( ... (xn op acc) ... )
+```
+
+i.e. `foldRight` and `reduceRight` do the same thing as `foldLeft` and `reduceLeft` resp., except starting from right instead of left.
+
+```scala
+List(1,3,8).foldRight(100)((elem, acc) => elem - acc) == 1 - (3 - (8-100)) == -94 // folds from right
 ```
 
 ![fold_reduce_right](https://github.com/rohitvg/scala-principles-1/blob/master/resources/images/fold_reduce_right.png)
@@ -109,3 +113,13 @@ val tr = t.foldRight(0) { (n: Int, acc: Int) => n }        //> tr  : Int = 2
 val tl = t.foldLeft(0) { (acc: Int, n: Int) => n + acc }   //> tl  : Int = 14
 val tr = t.foldRight(0) { (n: Int, acc: Int) => n + acc}   //> tr  : Int = 14
 ```
+
+> Note: In foldLeft, since we start from left, we start with the accumulator at the left:
+> ```scala
+> foldLeft(0)((acc, elem) => ... ) // here acc is 0, but it can be anything
+> ``` 
+>
+> In foldRight, since we start from right, we start with the accumulator at the right:
+> ```scala
+> foldLeft(0)((elem, acc) => ... ) // here acc is 0, but it can be anything
+> ``` 
