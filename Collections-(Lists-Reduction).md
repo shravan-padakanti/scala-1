@@ -76,6 +76,8 @@ abstract class List[T] { ...
 
 Applications of `foldLeft` and `reduceLeft` unfold on trees that lean to the left. So trees which lean to right, can use similar `foldRight` and `reduceRight`.
 
+i.e. `foldRight` and `reduceRight` do the same thing as `foldLeft` and `reduceLeft` resp., except starting from right instead of left.
+
 ```scala
 List(x1, ..., xn)  reduceRight op   = x1 op ( ... (x(n-1) op xn) ... )
 (List(x1, ..., xn) foldRight z)(op) = x1 op ( ... (xn op acc) ... )
