@@ -39,9 +39,16 @@ def product(xs: List[Int]) = (1 :: xs) reduceLeft ( _ * _ )
 ### FoldLeft (fold from left)
 
 The function `reduceLeft` is defined in terms of a more general function, `foldLeft`. It's like `reduceLeft`, but it takes an **accumulator**, or zero-element `z`, which is returned when `foldLeft` is called on an empty list.
+
 ```scala
 (List(x1, ..., xn) foldLeft z)(op) = (...(z op x1) op ...) op xn
 ```
+
+Basically `foldLeft` folds from left. It takes in 2 arguments, and accumulator and a function. The accumulator and the first element in the list is passed to the function, and the result becomes the new accumulator which is now passed in with the second element in the list to the function, and so on until the list is completely folded.
+```scala
+List(1,3,8).foldLeft(100)((s,x) => s - x) == ((100 - 1) - 3) - 8 == 88 // folds from left
+```
+
 So,
 ```scala
 def	sum(xs: List[Int]) = (xs foldLeft 0) (_ + _)
