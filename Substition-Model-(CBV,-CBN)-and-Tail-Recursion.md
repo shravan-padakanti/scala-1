@@ -5,7 +5,9 @@
 > * **Lazy-evaluation:** The expression is evaluated only when its referenced for the first time. For all later times that x is referenced, the same value is used.
 > * **Call-by-name:** The expression is evaluated every time it is referenced.
 >
-> Some reading on CBN, CBV: http://stackoverflow.com/questions/13337338/call-by-name-vs-call-by-value-in-scala-clarification-needed
+> Some reading on CBN, CBV: 
+> * http://stackoverflow.com/questions/13337338/call-by-name-vs-call-by-value-in-scala-clarification-needed
+> * http://stackoverflow.com/questions/4437373/use-of-def-val-and-var-in-scala/4440614#4440614
 
 ### Substitution Model: 
 An expression is evaluated i.e. is reduced to a value using substitution. Evaluation of expression takes place from left to right.
